@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 16:13:12 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/19 12:15:02 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/19 12:17:00 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/01/19 16:44:12 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEGAPHONE_HPP
+#ifndef PHONEBOOK_CLASS_HPP
 
-# define MEGAPHONE_HPP
+#define PHONEBOOK_CLASS_HPP
 
-# include <iostream>
-# include <stdio.h>
-# include <string.h>
+class Phonebook
+{
+
+public:
+	char	*cmd;
+	Contact	contact[8];
+
+	Phonebook(void);
+	~Phonebook(void);
+
+	void	add(Contact *contact, int i);
+	void	search(Contact *contacts) const;
+	void	exit(Contact *contacts);
+};
 
 #endif
