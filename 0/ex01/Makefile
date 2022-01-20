@@ -4,8 +4,7 @@ SRCS =  srcs/main.cpp \
 		srcs/phonebook.class.cpp \
 		srcs/contact.class.cpp
 
-INCS =  srcs/main.cpp \
-		incs/phonebook.class.hpp \
+INCS =  incs/phonebook.class.hpp \
 		incs/contact.class.hpp
 
 OBJS = $(SRCS:.cpp=.o)
