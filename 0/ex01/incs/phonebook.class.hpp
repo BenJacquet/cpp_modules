@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:17:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/20 14:56:14 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:01:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 #define PHONEBOOK_CLASS_HPP
 
-class Phonebook
+#include "../incs/contact.class.hpp"
+
+class PhoneBook
 {
+private:
+	Contact contacts[8];
+	
 public:
-	Phonebook(void);
-	~Phonebook(void);
-	// char	*getcmd(void) const;
-	// void	setcmd(char *);
+	PhoneBook(void);
+	~PhoneBook(void);
+	void	loop(int ac, char **av);
 };
 
 #endif

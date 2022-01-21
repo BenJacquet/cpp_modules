@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:13:12 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/19 12:15:02 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:18:00 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 # define MEGAPHONE_HPP
 
-# include <iostream>
-# include <stdio.h>
-# include <string.h>
+#include <iostream>
 
 #endif
