@@ -1,26 +1,22 @@
-NAME = violence
+NAME = karenFilter
 
 SRCS = main.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
-		Weapon.cpp
+		Karen.cpp
 
-INCS = HumanA.hpp \
-		HumanB.hpp \
-		Weapon.hpp
+INCS = Karen.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all : $(NAME)
 
-main.o : $(INCS)
-
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+main.o : $(INCS)
 
 clean :
 	rm -rf $(OBJS)

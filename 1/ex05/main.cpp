@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 10:20:44 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/25 11:13:15 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/25 14:31:30 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/01/25 15:28:38 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Karen.hpp"
 
-Weapon::Weapon(std::string type) : _type(type)
+int	main(int ac, char **av)
 {
-	return;
-}
+	Karen	karen;
 
-Weapon::~Weapon(void)
-{
-	return;
-}
-
-std::string Weapon::getType (void) const
-{
-	return (this->_type);
-}
-
-
-void Weapon::setType (std::string type)
-{
-	this->_type = type;
-	return;
+	if (ac != 2)
+		return (1);
+	karen.complain(av[1]);
+	return (0);
 }

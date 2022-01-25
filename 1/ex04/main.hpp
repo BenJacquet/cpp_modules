@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 10:20:44 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/25 11:13:15 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/25 11:58:15 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/01/25 12:13:18 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-Weapon::Weapon(std::string type) : _type(type)
-{
-	return;
-}
-
-Weapon::~Weapon(void)
-{
-	return;
-}
-
-std::string Weapon::getType (void) const
-{
-	return (this->_type);
-}
+#include <iostream>
+#include <fstream>
 
 
-void Weapon::setType (std::string type)
-{
-	this->_type = type;
-	return;
-}
+#endif

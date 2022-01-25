@@ -1,19 +1,14 @@
-NAME = violence
+NAME = sed
 
-SRCS = main.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
-		Weapon.cpp
+SRCS = main.cpp
 
-INCS = HumanA.hpp \
-		HumanB.hpp \
-		Weapon.hpp
+INCS = main.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
