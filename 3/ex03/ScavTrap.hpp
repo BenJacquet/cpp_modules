@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:24:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 17:58:35 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:55:16 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ public:
 	~ScavTrap();
 	ScavTrap & operator=(ScavTrap & scavtrap);
 	void attack(const std::string& target);
-	virtual void takeDamage(unsigned int amount);
-	virtual void beRepaired(unsigned int amount);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 	void guardGate();
 };
 

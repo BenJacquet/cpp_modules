@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:04:35 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 17:58:57 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:54:37 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	DiamondTrap(std::string name);
 	~DiamondTrap();
 	DiamondTrap & operator=(DiamondTrap & Diamondtrap);
-	// void attack(const std::string& target);
+	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void whoAmI();

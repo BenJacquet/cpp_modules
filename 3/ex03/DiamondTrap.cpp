@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:04:33 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 17:58:53 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:55:07 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,27 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap & Diamondtrap)
 	return (*this);
 }
 
-// void DiamondTrap::attack(const std::string& target)
-// {
-// 	if (this->_energy > 0)
-// 	{
-// 		std::cout << "DiamondTrap " << this->_name << " attacks " << target << ", causing " << this->_attack << " points of damage!" << std::endl;
-// 		this->_energy--;
-// 	}
-// 	else
-// 		std::cout << "DiamondTrap " << this->_name << " wants to attack " << target << ", but it does not have enough energy." << std::endl;
-// 	return;
-// }
+void DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
+	return;
+}
+
+void DiamondTrap::takeDamage(unsigned int amount)
+{
+	if (this->_hitPoints == 0)
+		std::cout << "DiamondTrap " << this->_name << " is already dead..." << std::endl;
+	else
+	{
+		this->_hitPoints -= amount;
+		if (this->_hitPoints <= 0)
+			this->_hitPoints = 0;
+		std::cout << "DiamondTrap " << this->_name << " has taken " << amount << " points of damage, it now has " << this->_hitPoints << " hitpoints." << std::endl;
+		if (this->_hitPoints <= 0)
+			std::cout << "DiamondTrap " << this->_name << " has died..." << std::endl;
+	}
+	return;
+}
 
 void DiamondTrap::beRepaired(unsigned int amount)
 {
@@ -67,5 +77,5 @@ void DiamondTrap::beRepaired(unsigned int amount)
 
 void DiamondTrap::whoAmI()
 {
-	
+	std::cout << "Hi! I'm DiamondTrap " << this->_name << "!" << std::endl;
 }
