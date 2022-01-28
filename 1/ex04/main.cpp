@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:58:17 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:10:42 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:12:45 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int ac, char **av)
 	std::ifstream	myFile(av[1]);
 	if (myFile.is_open())
 	{
-		std::ofstream	replaceFile(replace.c_str(), std::ofstream::out | std::ofstream::trunc);
+		std::ofstream	replaceFile(replace.c_str());
 		if (replaceFile.is_open())
 		{
 			while (std::getline(myFile, buffer))
