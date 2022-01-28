@@ -19,6 +19,7 @@ $(NAME) : $(OBJS)
 
 clean :
 	rm -rf $(OBJS)
+	rm -rf *.replace
 
 fclean : clean
 	rm -rf $(NAME)
