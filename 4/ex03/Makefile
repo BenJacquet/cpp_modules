@@ -1,11 +1,15 @@
 NAME = materia
 
 SRCS = main.cpp\
-		Materia.cpp\
-		Character.cpp
+		AMateria.cpp\
+		ICharacter.cpp\
+		Ice.cpp\
+		Cure.cpp
 
-INCS = Materia.hpp \
-		Character.hpp
+INCS = AMateria.hpp \
+		ICharacter.hpp\
+		Ice.hpp\
+		Cure.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

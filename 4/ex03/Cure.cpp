@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:21:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 13:23:06 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:27:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cure::Cure()
 {
+	this->_type = "cure";
 	std::cout << "Default constructor for Cure class called." << std::endl;
 }
 
@@ -43,7 +44,15 @@ void Cure::setType(std::string const & type)
 	this->_type = type;
 }
 
-// virtual Cure* Cure::clone()
-// {
+Cure* Cure::clone() const
+{
+	Cure *cure = new Cure;
 	
-// }
+	cure->setType(this->getType());
+	return (cure);
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 13:25:26 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:32:23 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include <ICharacter.hpp>
+#include "ICharacter.hpp"
 
 class AMateria
 {

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 13:23:02 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:27:33 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Ice::Ice()
 {
+	this->_type = "ice";
 	std::cout << "Default constructor for Ice class called." << std::endl;
 }
 
@@ -43,7 +44,15 @@ void Ice::setType(std::string const & type)
 	this->_type = type;
 }
 
-// virtual Ice* Ice::clone()
-// {
+Ice* Ice::clone() const
+{
+	Ice *ice = new Ice;
 	
-// }
+	ice->setType(this->getType());
+	return (ice);
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

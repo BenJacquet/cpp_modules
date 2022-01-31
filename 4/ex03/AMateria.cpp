@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 13:34:25 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:19:42 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 AMateria::AMateria()
 {
+	this->_type = "empty";
 	std::cout << "Default constructor for AMateria class called." << std::endl;
 }
 
@@ -43,12 +44,12 @@ void AMateria::setType(std::string const & type)
 	this->_type = type;
 }
 
-// AMateria* AMateria::clone()
-// {
+AMateria* AMateria::clone() const
+{
 	
-// }
+}
 
-// void use(ICharacter& target)
-// {
-
-// }
+void AMateria::use(ICharacter& target)
+{
+	
+}
