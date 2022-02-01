@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 12:52:02 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:24:59 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,27 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
+
+class GradeTooHighException : public std::exception
+{
+private:
+	std::string _msg;
+public:
+	GradeTooHighException();
+	~GradeTooHighException();
+	virtual const char* what() const noexcept override;
+};
+
+class GradeTooLowException : public std::exception
+{
+private:
+	std::string _msg;
+public:
+	GradeTooLowException();
+	~GradeTooLowException();
+	virtual const char* what() const noexcept override;
+};
 
 class Bureaucrat
 {
@@ -30,8 +51,6 @@ public:
 	void operator--();
 	std::string const getName();
 	int getGrade();
-	void GradeTooHighException();
-	void GradeTooLowException();
 };
 
 std::ostream & operator<<(std::ostream & COUT, Bureaucrat & bureaucrat);
