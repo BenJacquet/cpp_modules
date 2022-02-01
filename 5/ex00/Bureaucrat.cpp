@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 15:51:35 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:12:03 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name), _
 	try
 	{
 		if (this->_grade > 150)
-			throw GradeTooLowException();
+			throw Bureaucrat::GradeTooLowException();
 		else if (this->_grade < 1)
-			throw GradeTooHighException();
+			throw Bureaucrat::GradeTooHighException();
 	}
 	catch (GradeTooLowException low)
 	{
@@ -61,7 +61,7 @@ void Bureaucrat::operator++(int)
 		if (this->_grade > 1)
 			this->_grade--;
 		else
-			throw GradeTooHighException();
+			throw Bureaucrat::GradeTooHighException();
 	}
 	catch (GradeTooHighException high)
 	{
@@ -76,7 +76,7 @@ void Bureaucrat::operator--(int)
 		if (this->_grade < 150)
 			this->_grade++;
 		else
-			throw GradeTooLowException();
+			throw Bureaucrat::GradeTooLowException();
 	}
 	catch (GradeTooLowException low)
 	{
@@ -92,4 +92,34 @@ std::string const Bureaucrat::getName()
 int Bureaucrat::getGrade()
 {
 	return (this->_grade);
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException()
+{
+	this->_msg = "grade is too high!";
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException()
+{
+	
+}
+
+std::string Bureaucrat::GradeTooHighException::getMessage()
+{
+	return (this->_msg);
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+{
+	this->_msg = "grade is too low...";
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException()
+{
+	
+}
+
+std::string Bureaucrat::GradeTooLowException::getMessage()
+{
+	return (this->_msg);
 }

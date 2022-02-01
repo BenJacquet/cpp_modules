@@ -1,13 +1,9 @@
 NAME = Bureaucrat
 
 SRCS = main.cpp\
-		Bureaucrat.cpp\
-		GradeTooHighException.cpp\
-		GradeTooLowException.cpp
+		Bureaucrat.cpp
 
-INCS = Bureaucrat.hpp\
-		GradeTooHighException.hpp\
-		GradeTooLowException.hpp
+INCS = Bureaucrat.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
