@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 16:27:33 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/01 12:04:32 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Ice::setType(std::string const & type)
 	this->_type = type;
 }
 
-Ice* Ice::clone() const
+Ice * Ice::clone() const
 {
 	Ice *ice = new Ice;
 	

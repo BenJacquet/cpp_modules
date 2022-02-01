@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:22:50 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 17:10:20 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/01 11:58:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <string>
-#include "ICharacter.hpp"
+#include "Character.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 protected:
 	std::string _type;

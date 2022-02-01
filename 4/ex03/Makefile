@@ -2,12 +2,12 @@ NAME = materia
 
 SRCS = main.cpp\
 		AMateria.cpp\
-		ICharacter.cpp\
+		Character.cpp\
 		Ice.cpp\
 		Cure.cpp
 
 INCS = AMateria.hpp \
-		ICharacter.hpp\
+		Character.hpp\
 		Ice.hpp\
 		Cure.hpp
 
