@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:06:53 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 15:55:44 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:11:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/contact.class.hpp"
-#include "../incs/phonebook.class.hpp"
-
+#include "../incs/Contact.class.hpp"
 
 Contact::Contact(void)
 {

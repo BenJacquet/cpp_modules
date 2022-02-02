@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:41 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:41:37 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:29:31 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -30,6 +29,5 @@ public:
 	Cat & operator=(Cat & cat);
 	void makeSound() const;
 	std::string getType() const;
+	Brain & getBrain() const;
 };
-
-#endif

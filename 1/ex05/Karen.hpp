@@ -6,12 +6,12 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 14:31:28 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/25 15:15:45 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:33:42 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-#define KAREN_HPP
+#pragma once
+
 #include <string>
 #include <iostream>
 #include <functional>
@@ -29,5 +29,3 @@ public:
 	~Karen( void );
 	void complain( std::string level );
 };
-
-#endif

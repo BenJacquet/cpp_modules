@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:16 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 15:35:35 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:10:51 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ Dog::Dog(std::string const type) : _type(type)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called." << std::endl;
+}
+
+Dog & Dog::operator=(Dog & dog)
+{
+	this->_type = dog.getType();
+	return (*this);
 }
 
 void	Dog::makeSound() const

@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:11:06 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:09:40 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:29:55 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -29,5 +28,3 @@ public:
 	void makeSound() const;
 	std::string getType() const;
 };
-
-#endif

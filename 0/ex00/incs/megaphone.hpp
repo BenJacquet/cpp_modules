@@ -6,14 +6,10 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:13:12 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 15:18:00 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:33:59 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEGAPHONE_HPP
-
-# define MEGAPHONE_HPP
+#pragma once
 
 #include <iostream>
-
-#endif

@@ -1,9 +1,11 @@
-NAME = Bureaucrat
+NAME = Form
 
 SRCS = main.cpp\
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
-INCS = Bureaucrat.hpp
+INCS = Bureaucrat.hpp\
+		Form.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

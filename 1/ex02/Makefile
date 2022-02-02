@@ -2,6 +2,8 @@ NAME = Hi
 
 SRCS = main.cpp
 
+INCS = main.hpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++

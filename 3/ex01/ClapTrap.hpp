@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:08:40 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 16:19:08 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:30:55 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -37,5 +36,3 @@ public:
 	int getEnergy() const;
 	int getAttack() const;
 };
-
-#endif

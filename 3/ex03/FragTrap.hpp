@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:17:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:55:19 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:31:54 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#pragma once
 
 #include <iostream>
 #include "ClapTrap.hpp"
@@ -33,5 +32,3 @@ public:
 	void beRepaired(unsigned int amount);
 	void highFiveGuys(void);
 };
-
-#endif

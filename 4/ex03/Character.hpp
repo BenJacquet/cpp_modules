@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 12:07:19 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:27:57 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -49,5 +48,3 @@ public:
 	virtual std::string const & getInventory(int i) const;
 	virtual void setInventory(AMateria * m, int i);
 };
-
-#endif

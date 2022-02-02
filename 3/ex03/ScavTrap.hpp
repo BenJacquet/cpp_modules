@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:24:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:55:16 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:32:01 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -35,5 +34,3 @@ public:
 	void beRepaired(unsigned int amount);
 	void guardGate();
 };
-
-#endif

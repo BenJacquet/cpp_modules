@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:57:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 16:25:46 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:27:16 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -56,5 +55,3 @@ public:
 };
 
 std::ostream & operator<<(std::ostream & COUT, Form & form);
-
-#endif

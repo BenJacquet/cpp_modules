@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 16:12:03 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:10:50 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,21 @@ std::string const Bureaucrat::getName()
 int Bureaucrat::getGrade()
 {
 	return (this->_grade);
+}
+
+void Bureaucrat::signForm(Form & form)
+{
+	try
+	{
+		if (this->_grade > form.getSignLvl())
+			throw Bureaucrat::GradeTooLowException();
+		else
+			std::cout << this->getName() << " signed " << form.getName();
+	}
+	catch (GradeTooLowException low)
+	{
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << low.getMessage() << std::endl;
+	}
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()

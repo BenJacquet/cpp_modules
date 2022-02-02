@@ -6,11 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:13:23 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 18:28:48 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:21:10 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "main.hpp"
 
 int		main(void)
 {

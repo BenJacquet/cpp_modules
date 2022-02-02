@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 11:58:09 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:27:49 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -32,5 +31,3 @@ public:
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 };
-
-#endif

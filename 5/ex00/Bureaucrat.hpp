@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 16:14:44 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:27:36 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -52,5 +51,3 @@ public:
 };
 
 std::ostream & operator<<(std::ostream & COUT, Bureaucrat & bureaucrat);
-
-#endif

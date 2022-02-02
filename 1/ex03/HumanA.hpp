@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:32:35 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 10:22:04 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:33:07 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#pragma once
 
 #include "Weapon.hpp"
 
@@ -27,5 +26,3 @@ public:
 	void	attack(void);
 	void	setWeapon(Weapon & weapon);
 };
-
-#endif

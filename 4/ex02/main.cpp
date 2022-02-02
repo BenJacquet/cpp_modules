@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 13:04:14 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:30:04 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/28 13:04:06 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/01/31 13:02:40 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
-
-class Animal
+int		main(int ac, char **av)
 {
-protected:
-	std::string _type;
-public:
-	Animal();
-	Animal(std::string type);
-	virtual ~Animal();
-	Animal & operator=(Animal & animal);
-	virtual void makeSound() const;
-	virtual std::string getType() const;
-};
+	// Animal animal;
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:38 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:01:41 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:10:59 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ Cat::Cat(std::string const type) : _type(type)
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called." << std::endl;
+}
+
+Cat & Cat::operator=(Cat & cat)
+{
+	this->_type = cat.getType();
+	return (*this);
 }
 
 void	Cat::makeSound() const

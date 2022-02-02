@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:06:54 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 14:16:40 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:34:11 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-
-#define CONTACT_CLASS_HPP
+#pragma once
 
 #include <iostream>
 #include <string.h>
@@ -51,5 +49,3 @@ public:
 
 std::string		truncate(std::string data, int maxchars);
 bool			good_index(std::string cmd, Contact *contact, int *index);
-
-#endif

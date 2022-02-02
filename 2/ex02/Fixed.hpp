@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 16:19:40 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:32:31 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#pragma once
 
 #include <iostream>
 
@@ -54,6 +53,3 @@ public:
 };
 
 std::ostream & operator<<(std::ostream & COUT, Fixed const & fixed);
-
-#endif
-

@@ -1,0 +1,13 @@
+CPP02 EX00 :
+Verifier la classe Fixed
+
+CPP02 EX00 01 et 02 :
+Implementer les rawBits
+Implementer les conversions vers int et float
+
+CPP03 EX03 :
+Check la classe de DiamondTrap
+	(ClapTrap::name (parameter of the constructor + "_clap_name" suffix))
+
+CPP04 EX04 :
+Terminer l'exo et l'interface

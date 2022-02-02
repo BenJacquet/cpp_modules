@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:11:06 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:11:32 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:30:38 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -25,9 +24,7 @@ public:
 	WrongCat();
 	WrongCat(std::string const type);
 	virtual ~WrongCat();
-	WrongCat & operator=(WrongCat & WrongCat);
+	WrongCat & operator=(WrongCat & wrongcat);
 	void makeSound() const;
 	std::string getType() const;
 };
-
-#endif

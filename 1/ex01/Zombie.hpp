@@ -6,13 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:16:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 17:33:36 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:32:49 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-
-#define ZOMBIE_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -31,5 +29,3 @@ public:
 
 Zombie*	zombieHorde( int N, std::string name );
 void	randomChump( std::string name );
-
-#endif

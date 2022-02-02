@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 15:45:33 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:42:08 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:09:30 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat destructor called." << std::endl;
 }
 
-WrongCat & WrongCat::operator=(WrongCat & const wrongcat)
+WrongCat & WrongCat::operator=(WrongCat & wrongcat)
 {
 	this->_type = wrongcat.getType();
 	return (*this);

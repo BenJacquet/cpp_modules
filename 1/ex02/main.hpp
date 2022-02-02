@@ -1,29 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 13:04:14 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:30:04 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/26 16:21:15 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/02 11:32:59 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <string>
-
-class Animal
-{
-protected:
-	std::string _type;
-public:
-	Animal();
-	Animal(std::string type);
-	virtual ~Animal();
-	Animal & operator=(Animal & animal);
-	virtual void makeSound() const;
-	virtual std::string getType() const;
-};

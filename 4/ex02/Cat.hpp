@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:32:22 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/28 13:04:41 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/02 11:28:38 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Fixed
+class Cat : public Animal
 {
 private:
-	int					_value;
-	static const int	_frac_bits = 8;
-
+	std::string _type;
+	Brain * _brain;
 public:
-	Fixed();
-	Fixed(const Fixed &	fixed);
-	Fixed(const int integer);
-	Fixed(const float floating);
-	~Fixed();
-	Fixed & operator=(const Fixed & fixed);
-	int getValue() const;
-	int getRawBits() const;
-	void setRawBits(int const raw);
-	float toFloat( void ) const;
-	int toInt( void ) const;
+	Cat();
+	Cat(std::string const type);
+	virtual ~Cat();
+	Cat & operator=(Cat & cat);
+	void makeSound() const;
+	std::string getType() const;
+	Brain & getBrain() const;
 };
-
-std::ostream & operator<<(std::ostream & COUT, Fixed const & fixed);

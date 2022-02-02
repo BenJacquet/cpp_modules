@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:10:49 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:15:16 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:30:29 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -24,9 +23,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(std::string type);
 	virtual ~WrongAnimal();
-	WrongAnimal & operator=(WrongAnimal & WrongAnimal);
+	WrongAnimal & operator=(WrongAnimal & wronganimal);
 	void makeSound() const;
 	std::string getType() const;
 };
-
-#endif

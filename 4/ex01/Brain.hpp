@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:18:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:57:11 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:29:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -26,7 +25,5 @@ public:
 	~Brain();
 	Brain & operator=(Brain & brain);
 	std::string getIdea(int const index) const;
-	void setIdea(int const index, std::string const idea);
+	void setIdea(std::string const idea, int const index);
 };
-
-#endif

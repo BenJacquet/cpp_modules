@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:14 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:54:05 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:29:15 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -28,5 +27,3 @@ public:
 	virtual void makeSound() const;
 	virtual std::string getType() const;
 };
-
-#endif

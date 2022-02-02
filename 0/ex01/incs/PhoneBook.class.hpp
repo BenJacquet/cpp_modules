@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:32:22 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/19 12:17:00 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/02 11:34:17 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "../incs/Contact.class.hpp"
 
-class Fixed
+class PhoneBook
 {
 private:
-	int					_value;
-	static const int	_frac_bits = 8;
-
+	Contact contacts[8];
+	
 public:
-	Fixed();
-	Fixed(const Fixed &	fixed);
-	Fixed(const int integer);
-	Fixed(const float floating);
-	~Fixed();
-	Fixed & operator=(const Fixed & fixed);
-	int getValue() const;
-	int getRawBits() const;
-	void setRawBits(int const raw);
-	float toFloat( void ) const;
-	int toInt( void ) const;
+	PhoneBook(void);
+	~PhoneBook(void);
+	void	loop(int ac, char **av);
 };
-
-std::ostream & operator<<(std::ostream & COUT, Fixed const & fixed);

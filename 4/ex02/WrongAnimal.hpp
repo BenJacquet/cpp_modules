@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 12:17:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 16:01:28 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/28 13:10:49 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/02 11:28:54 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
+#pragma once
 
-#define PHONEBOOK_CLASS_HPP
+#include <iostream>
+#include <string>
 
-#include "../incs/contact.class.hpp"
-
-class PhoneBook
+class WrongAnimal
 {
-private:
-	Contact contacts[8];
-	
+protected:
+	std::string _type;
 public:
-	PhoneBook(void);
-	~PhoneBook(void);
-	void	loop(int ac, char **av);
+	WrongAnimal();
+	WrongAnimal(std::string type);
+	virtual ~WrongAnimal();
+	WrongAnimal & operator=(WrongAnimal & wronganimal);
+	void makeSound() const;
+	std::string getType() const;
 };
-
-#endif

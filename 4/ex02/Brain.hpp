@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:32:22 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/01/28 16:18:32 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/02 11:28:31 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <string>
 
-class Fixed
+class Brain
 {
 private:
-	int					_value;
-	static const int	_frac_bits = 8;
-
+	std::string _ideas[100];
 public:
-	Fixed();
-	Fixed(const Fixed &	fixed);
-	Fixed(const int integer);
-	Fixed(const float floating);
-	~Fixed();
-	Fixed & operator=(const Fixed & fixed);
-	int getValue() const;
-	int getRawBits() const;
-	void setRawBits(int const raw);
-	float toFloat( void ) const;
-	int toInt( void ) const;
+	Brain();
+	Brain(std::string ideas[]);
+	~Brain();
+	Brain & operator=(Brain & brain);
+	std::string getIdea(int const index) const;
+	void setIdea(std::string const idea, int const index);
 };
-
-std::ostream & operator<<(std::ostream & COUT, Fixed const & fixed);

@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:22:18 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 11:58:22 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:28:05 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -33,5 +32,3 @@ public:
 	virtual Cure* clone() const;
 	virtual void use(ICharacter& target);
 };
-
-#endif

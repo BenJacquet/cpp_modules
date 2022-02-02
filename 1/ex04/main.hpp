@@ -6,15 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:58:15 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/25 12:13:18 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:33:26 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#pragma once
 
 #include <iostream>
 #include <fstream>
-
-
-#endif

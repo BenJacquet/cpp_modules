@@ -6,12 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:04:35 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:54:37 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:31:47 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -37,5 +36,3 @@ public:
 	void beRepaired(unsigned int amount);
 	void whoAmI();
 };
-
-#endif
