@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:36:21 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 12:17:19 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:33:15 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Brain::Brain()
 
 Brain::Brain(Brain & src)
 {
+	std::cout << "Copy Brain constructor called." << std::endl;
 	this->_ideas[0] = src.getIdea(0);
 }
 

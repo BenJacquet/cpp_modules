@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 15:45:33 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:42:08 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:35:03 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ WrongCat::WrongCat() : _type("WrongCat")
 
 WrongCat::WrongCat(WrongCat & src)
 {
+	std::cout << "Copy WrongCat constructor called." << std::endl;
 	this->_type = src.getType();
 }
 

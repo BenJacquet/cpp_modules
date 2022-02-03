@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:09:12 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:32:49 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Animal::Animal()
 
 Animal::Animal(Animal & src)
 {
+	std::cout << "Copy Animal constructor called." << std::endl;
 	this->_type = src.getType();
 }
 

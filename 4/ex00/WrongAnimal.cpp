@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 15:44:40 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:10:43 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:34:42 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(WrongAnimal & src)
 {
+	std::cout << "Copy WrongAnimal constructor called." << std::endl;
 	this->_type = src.getType();
 }
 

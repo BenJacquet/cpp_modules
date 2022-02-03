@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:16 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 12:32:28 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:34:23 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Dog::Dog() : _type("Dog")
 
 Dog::Dog(Dog & src)
 {
+	std::cout << "Copy Dog constructor called." << std::endl;
 	this->_type = src.getType();
 }
 

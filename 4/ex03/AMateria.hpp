@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:27:49 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:29:19 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ protected:
 
 public:
 	AMateria();
+	AMateria(AMateria & src);
 	AMateria(std::string const & type);
 	~AMateria();
 	AMateria & operator=(AMateria & materia);

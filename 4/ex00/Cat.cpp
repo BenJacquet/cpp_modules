@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:38 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 17:10:59 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:33:56 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Cat::Cat() : _type("Cat")
 
 Cat::Cat(Cat & src)
 {
+	std::cout << "Copy Cat constructor called." << std::endl;
 	this->_type = src.getType();
 }
 

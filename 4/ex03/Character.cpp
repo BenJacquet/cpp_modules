@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:25 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 12:08:58 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:23:57 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,20 @@
 Character::Character()
 {
 	std::cout << "Default constructor for Character class called." << std::endl;
+	this->_name = "default";
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
 }
 
 Character::Character(std::string const & name) : _name(name)
 {
 	std::cout << "Parametric constructor for Character class called." << std::endl;
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
 }
 
 Character::~Character()
