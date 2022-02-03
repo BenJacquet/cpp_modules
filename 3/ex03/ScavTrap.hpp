@@ -22,6 +22,7 @@ private:
 
 public:
 	ScavTrap();
+	ScavTrap(ScavTrap & src);
 	ScavTrap(std::string name);
 	virtual ~ScavTrap();
 	ScavTrap & operator=(ScavTrap & scavtrap);

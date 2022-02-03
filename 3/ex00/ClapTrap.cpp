@@ -18,6 +18,16 @@ ClapTrap::ClapTrap() : _name("CL4P-TP"), _hitPoints(10), _energy(10), _attack(0)
 	return;
 }
 
+ClapTrap::ClapTrap(ClapTrap & src)
+{
+	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energy = src.getEnergy();
+	this->_attack = src.getAttack();
+	return;
+}
+
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energy(10), _attack(0)
 {
 	std::cout << "Parametric constructor for ClapTrap called" << std::endl;

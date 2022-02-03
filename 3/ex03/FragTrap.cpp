@@ -22,6 +22,16 @@ FragTrap::FragTrap()
 	return;
 }
 
+FragTrap::FragTrap(FragTrap & src) : ClapTrap(src)
+{
+	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energy = src.getEnergy();
+	this->_attack = src.getAttack();
+	return;
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametric constructor for FragTrap called" << std::endl;

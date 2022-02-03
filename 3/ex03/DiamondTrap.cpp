@@ -23,6 +23,16 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 	return;
 }
 
+DiamondTrap::DiamondTrap(DiamondTrap & src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
+{
+	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energy = src.getEnergy();
+	this->_attack = src.getAttack();
+	return;
+}
+
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
 	std::cout << "Parametric constructor for DiamondTrap called" << std::endl;

@@ -25,6 +25,7 @@ protected:
 
 public:
 	ClapTrap();
+	ClapTrap(ClapTrap & src);
 	ClapTrap(std::string name);
 	virtual ~ClapTrap();
 	ClapTrap & operator=(ClapTrap & claptrap);

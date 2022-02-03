@@ -21,6 +21,7 @@ private:
 
 public:
 	FragTrap();
+	FragTrap(FragTrap & src);
 	FragTrap(std::string name);
 	~FragTrap();
 	FragTrap & operator=(FragTrap & Fragtrap);

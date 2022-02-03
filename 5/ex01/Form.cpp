@@ -49,7 +49,7 @@ Form::~Form()
 
 Form & Form::operator=(Form & form)
 {
-	this->_signed = form.getSigned;
+	this->_signed = form.getSigned();
 	return (*this);
 }
 
