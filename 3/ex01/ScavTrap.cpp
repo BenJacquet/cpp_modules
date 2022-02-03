@@ -12,22 +12,27 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : _name("SC4V-TP"), _hitPoints(10), _energy(10), _attack(0)
+ScavTrap::ScavTrap()
 {
-	std::cout << "Default constructor of ScavTrap called" << std::endl;
+	std::cout << "Default constructor for ScavTrap called" << std::endl;
+	this->_name = "SC4V-TP";
+	this->_hitPoints = 100;
+	this->_energy = 50;
+	this->_attack = 20;
 	return;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _name(name), _hitPoints(10), _energy(10), _attack(0)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Parametric constructor of ScavTrap called" << std::endl;
-	return;
+	std::cout << "Parametric constructor for ScavTrap called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energy = 50;
+	this->_attack = 20;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor of ScavTrap called" << std::endl;
-	return;
+	std::cout << "Destructor for ScavTrap called" << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap & scavtrap)
@@ -49,35 +54,6 @@ void ScavTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << "ScavTrap " << this->_name << " wants to attack " << target << ", but it does not have enough energy." << std::endl;
-	return;
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hitPoints == 0)
-		std::cout << "ScavTrap " << this->_name << " is already dead..." << std::endl;
-	else
-	{
-		this->_hitPoints -= amount;
-		if (this->_hitPoints <= 0)
-			this->_hitPoints = 0;
-		std::cout << "ScavTrap " << this->_name << " has taken " << amount << " points of damage, it now has " << this->_hitPoints << " hitpoints." << std::endl;
-		if (this->_hitPoints <= 0)
-			std::cout << "ScavTrap " << this->_name << " has died..." << std::endl;
-	}
-	return;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_energy > 0)
-	{
-		this->_hitPoints += amount;
-		std::cout << "ScavTrap " << this->_name << " has repaired itself and recovered " << amount << " hitpoints, it now has " << this->_hitPoints << " hitpoints."<< std::endl;
-		this->_energy--;
-	}
-	else
-		std::cout << "ScavTrap " << this->_name << " wants to repair itself, but it does not have enough energy." << std::endl;
 	return;
 }
 

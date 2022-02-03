@@ -12,21 +12,31 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : _name("DMND-TP"), _hitPoints(FragTrap::getHitPoints()), _energy(ScavTrap::getEnergy()), _attack(FragTrap::getAttack())
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
-	std::cout << "Default constructor of DiamondTrap called" << std::endl;
+	std::cout << "Default constructor for DiamondTrap called" << std::endl;
+	this->_name = "DMND-TP";
+	this->ClapTrap::_name = this->_name + "_clap_name";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energy = ScavTrap::_energy;
+	this->_attack = FragTrap::_attack;
 	return;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), _name(name), _hitPoints(100), _energy(100), _attack(30)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
-	std::cout << "Parametric constructor of DiamondTrap called" << std::endl;
+	std::cout << "Parametric constructor for DiamondTrap called" << std::endl;
+	this->_name = name;
+	this->ClapTrap::_name = name + "_clap_name";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energy = ScavTrap::_energy;
+	this->_attack = FragTrap::_attack;
 	return;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Destructor of DiamondTrap called" << std::endl;
+	std::cout << "Destructor for DiamondTrap called" << std::endl;
 	return;
 }
 
@@ -40,42 +50,7 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap & Diamondtrap)
 	return (*this);
 }
 
-void DiamondTrap::attack(const std::string& target)
-{
-	ScavTrap::attack(target);
-	return;
-}
-
-void DiamondTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hitPoints == 0)
-		std::cout << "DiamondTrap " << this->_name << " is already dead..." << std::endl;
-	else
-	{
-		this->_hitPoints -= amount;
-		if (this->_hitPoints <= 0)
-			this->_hitPoints = 0;
-		std::cout << "DiamondTrap " << this->_name << " has taken " << amount << " points of damage, it now has " << this->_hitPoints << " hitpoints." << std::endl;
-		if (this->_hitPoints <= 0)
-			std::cout << "DiamondTrap " << this->_name << " has died..." << std::endl;
-	}
-	return;
-}
-
-void DiamondTrap::beRepaired(unsigned int amount)
-{
-	if (this->_energy > 0)
-	{
-		this->_hitPoints += amount;
-		std::cout << "DiamondTrap " << this->_name << " has repaired itself and recovered " << amount << " hitpoints, it now has " << this->_hitPoints << " hitpoints."<< std::endl;
-		this->_energy--;
-	}
-	else
-		std::cout << "DiamondTrap " << this->_name << " wants to repair itself, but it does not have enough energy." << std::endl;
-	return;
-}
-
 void DiamondTrap::whoAmI()
 {
-	std::cout << "Hi! I'm DiamondTrap " << this->_name << "!" << std::endl;
+	std::cout << "private name : " << this->_name << ", claptrap name : " << this->ClapTrap::_name << std::endl;
 }

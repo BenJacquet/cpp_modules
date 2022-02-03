@@ -24,8 +24,6 @@ int	main(int ac, char **av)
 
 		Fragtrap.attack("Jack");
 		Fragtrap.takeDamage(9);
-		for (int i = 0 ; i < 10 ; i++)
-			Fragtrap.beRepaired(1);
 		Fragtrap.attack("Handsome Jack");
 		Fragtrap.beRepaired(1);
 		Fragtrap.takeDamage(20);

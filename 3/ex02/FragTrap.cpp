@@ -12,21 +12,28 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : _name("FR4G-TP"), _hitPoints(100), _energy(100), _attack(30)
+FragTrap::FragTrap()
 {
-	std::cout << "Default constructor of FragTrap called" << std::endl;
+	std::cout << "Default constructor for FragTrap called" << std::endl;
+	this->_name = "FR4G-TP";
+	this->_hitPoints = 100;
+	this->_energy = 100;
+	this->_attack = 30;
 	return;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name), _name(name), _hitPoints(100), _energy(100), _attack(30)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Parametric constructor of FragTrap called" << std::endl;
+	std::cout << "Parametric constructor for FragTrap called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energy = 100;
+	this->_attack = 30;
 	return;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destructor of FragTrap called" << std::endl;
+	std::cout << "Destructor for FragTrap called" << std::endl;
 	return;
 }
 
@@ -52,37 +59,8 @@ void FragTrap::attack(const std::string& target)
 	return;
 }
 
-void FragTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hitPoints == 0)
-		std::cout << "FragTrap " << this->_name << " is already dead..." << std::endl;
-	else
-	{
-		this->_hitPoints -= amount;
-		if (this->_hitPoints <= 0)
-			this->_hitPoints = 0;
-		std::cout << "FragTrap " << this->_name << " has taken " << amount << " points of damage, it now has " << this->_hitPoints << " hitpoints." << std::endl;
-		if (this->_hitPoints <= 0)
-			std::cout << "FragTrap " << this->_name << " has died..." << std::endl;
-	}
-	return;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	if (this->_energy > 0)
-	{
-		this->_hitPoints += amount;
-		std::cout << "FragTrap " << this->_name << " has repaired itself and recovered " << amount << " hitpoints, it now has " << this->_hitPoints << " hitpoints."<< std::endl;
-		this->_energy--;
-	}
-	else
-		std::cout << "FragTrap " << this->_name << " wants to repair itself, but it does not have enough energy." << std::endl;
-	return;
-}
-
 void FragTrap::highFiveGuys(void)
 {
-	std::cout << "FragTrap " << this->_name << " high fives everyone in the room!" << std::endl;
+	std::cout << "FragTrap " << this->_name << " : Let's high five !" << std::endl;
 	return;
 }

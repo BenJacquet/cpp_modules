@@ -14,19 +14,19 @@
 
 ClapTrap::ClapTrap() : _name("CL4P-TP"), _hitPoints(10), _energy(10), _attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor for ClapTrap called" << std::endl;
 	return;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energy(10), _attack(0)
 {
-	std::cout << "Parametric constructor called" << std::endl;
+	std::cout << "Parametric constructor for ClapTrap called" << std::endl;
 	return;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor of ClapTrap called" << std::endl;
+	std::cout << "Destructor for ClapTrap called" << std::endl;
 	return;
 }
 
