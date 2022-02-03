@@ -13,12 +13,13 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
 private:
 	int					_value;
-	static const int	_frac_bits = 8;
+	static const int	_bits = 8;
 
 public:
 	Fixed();
@@ -35,21 +36,21 @@ public:
 	Fixed operator++(int);
 	Fixed operator--(void);
 	Fixed operator--(int);
-	bool operator>(const Fixed & fixed) const ;
-	bool operator<(const Fixed & fixed) const ;
-	bool operator>=(const Fixed & fixed) const ;
-	bool operator<=(const Fixed & fixed) const ;
-	bool operator==(const Fixed & fixed) const ;
-	bool operator!=(const Fixed & fixed) const ;
+	bool operator>(const Fixed & fixed) const;
+	bool operator<(const Fixed & fixed) const;
+	bool operator>=(const Fixed & fixed) const;
+	bool operator<=(const Fixed & fixed) const;
+	bool operator==(const Fixed & fixed) const;
+	bool operator!=(const Fixed & fixed) const;
 	int getValue() const;
 	int getRawBits() const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
 	Fixed & min(Fixed & a, Fixed & b) const;
-	Fixed & min(Fixed & const a, Fixed & const b) const;
+	static const Fixed & min(const Fixed & a, const Fixed & b);
 	Fixed & max(Fixed & a, Fixed & b) const;
-	Fixed & max(Fixed & const a, Fixed & const b) const;
+	static const Fixed & max(const Fixed & a, const Fixed & b);
 };
 
 std::ostream & operator<<(std::ostream & COUT, Fixed const & fixed);

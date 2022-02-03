@@ -28,13 +28,14 @@ Fixed::Fixed(const Fixed & fixed)
 
 Fixed::Fixed(const int integer)
 {
-	
+	this->_value = integer << this->_bits;
 	std::cout << "Int constructor called" << std::endl;
 	return;
 }
 
 Fixed::Fixed(const float floating)
 {
+	this->_value = roundf(floating * (1 << this->_bits));
 	std::cout << "Float constructor called" << std::endl;
 	return;
 }
@@ -74,6 +75,7 @@ Fixed Fixed::operator/(const Fixed & fixed) const
 
 Fixed Fixed::operator++(void)
 {
+	this->_value++;
 	return (*this);
 }
 
@@ -81,59 +83,62 @@ Fixed Fixed::operator++(int)
 {
 	Fixed	tmp = *this;
 	
+	this->_value++;
 	return (tmp);
 }
 
 Fixed Fixed::operator--(void)
 {
+	this->_value--;
 	return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
 	Fixed	tmp = *this;
-	
+
+	this->_value--;
 	return (tmp);
 }
 
 bool Fixed::operator>(const Fixed & fixed) const
 {
-	if (this->toFloat() > fixed.toFloat())
+	if (this->_value > fixed.getValue())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator<(const Fixed & fixed) const
 {
-	if (this->toFloat() < fixed.toFloat())
+	if (this->_value < fixed.getValue())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator>=(const Fixed & fixed) const
 {
-	if (this->toFloat() >= fixed.toFloat())
+	if (this->_value >= fixed.getValue())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator<=(const Fixed & fixed) const
 {
-	if (this->toFloat() <= fixed.toFloat())
+	if (this->_value <= fixed.getValue())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator==(const Fixed & fixed) const
 {
-	if (this->toFloat() == fixed.toFloat())
+	if (this->_value == fixed.getValue())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator!=(const Fixed & fixed) const
 {
-	if (this->toFloat() != fixed.toFloat())
+	if (this->_value != fixed.getValue())
 		return (true);
 	return (false);
 }
@@ -162,12 +167,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return;
+	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_bits));
 }
 
 int		Fixed::toInt( void ) const
 {
-	return;
+	return (this->_value >> this->_bits);
 }
 
 Fixed & Fixed::min(Fixed & a, Fixed & b) const
@@ -177,7 +182,7 @@ Fixed & Fixed::min(Fixed & a, Fixed & b) const
 	return (b);
 }
 
-Fixed & Fixed::min(Fixed & const a, Fixed & const b) const
+const Fixed & Fixed::min(const Fixed & a, const Fixed & b)
 {
 	if (a <= b)
 		return (a);
@@ -191,7 +196,7 @@ Fixed & Fixed::max(Fixed & a, Fixed & b) const
 	return (b);
 }
 
-Fixed & Fixed::max(Fixed & const a, Fixed & const b) const
+const Fixed & Fixed::max(const Fixed & a, const Fixed & b)
 {
 	if (a >= b)
 		return (a);

@@ -28,13 +28,14 @@ Fixed::Fixed(const Fixed & fixed)
 
 Fixed::Fixed(const int integer)
 {
-	
+	this->_value = integer << this->_bits;
 	std::cout << "Int constructor called" << std::endl;
 	return;
 }
 
 Fixed::Fixed(const float floating)
 {
+	this->_value = roundf(floating * (1 << this->_bits));
 	std::cout << "Float constructor called" << std::endl;
 	return;
 }
@@ -76,10 +77,10 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return;
+	return (static_cast<float>(this->_value) / static_cast<float>(1 << this->_bits));
 }
 
 int		Fixed::toInt( void ) const
 {
-	return;
+	return (this->_value >> this->_bits);
 }
