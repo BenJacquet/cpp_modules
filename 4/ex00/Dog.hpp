@@ -22,6 +22,7 @@ private:
 	std::string _type;
 public:
 	Dog();
+	Dog(Dog & src);
 	Dog(std::string const type);
 	virtual ~Dog();
 	Dog & operator=(Dog & dog);

@@ -18,6 +18,11 @@ Animal::Animal()
 	std::cout << "Default Animal constructor called." << std::endl;
 }
 
+Animal::Animal(Animal & src)
+{
+	this->_type = src.getType();
+}
+
 Animal::Animal(std::string type) : _type(type)
 {
 	std::cout << "Parametric Animal constructor called." << std::endl;	

@@ -17,6 +17,11 @@ WrongCat::WrongCat() : _type("WrongCat")
 	std::cout << "Default WrongCat constructor called." << std::endl;
 }
 
+WrongCat::WrongCat(WrongCat & src)
+{
+	this->_type = src.getType();
+}
+
 WrongCat::WrongCat(std::string const type) : _type(type)
 {
 	std::cout << "Parametric WrongCat constructor called." << std::endl;	

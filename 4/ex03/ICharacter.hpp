@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 13:04:18 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:28:46 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/03 14:48:30 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/03 14:50:24 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Dog : public Animal
+class ICharacter
 {
-private:
-	std::string _type;
-	Brain * _brain;
 public:
-	Dog();
-	Dog(Dog & src);
-	Dog(std::string const type);
-	virtual ~Dog();
-	Dog & operator=(Dog & dog);
-	void makeSound() const;
-	std::string getType() const;
-	Brain & getBrain() const;
+	ICharacter();
+	ICharacter(std::string const & name);
+	virtual ~ICharacter() {}
+	ICharacter & operator=(ICharacter & character);
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter & target) = 0;
+	virtual std::string const & getInventory(int i) const;
+	virtual void setInventory(AMateria * m, int i);
 };

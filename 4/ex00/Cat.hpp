@@ -22,6 +22,7 @@ private:
 	std::string _type;
 public:
 	Cat();
+	Cat(Cat & src);
 	Cat(std::string const type);
 	virtual ~Cat();
 	Cat & operator=(Cat & cat);

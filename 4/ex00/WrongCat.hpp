@@ -22,6 +22,7 @@ private:
 	std::string _type;
 public:
 	WrongCat();
+	WrongCat(WrongCat & src);
 	WrongCat(std::string const type);
 	virtual ~WrongCat();
 	WrongCat & operator=(WrongCat & wrongcat);

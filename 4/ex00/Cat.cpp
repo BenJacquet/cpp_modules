@@ -17,6 +17,11 @@ Cat::Cat() : _type("Cat")
 	std::cout << "Default Cat constructor called." << std::endl;
 }
 
+Cat::Cat(Cat & src)
+{
+	this->_type = src.getType();
+}
+
 Cat::Cat(std::string const type) : _type(type)
 {
 	std::cout << "Parametric Cat constructor called." << std::endl;	

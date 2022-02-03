@@ -17,6 +17,11 @@ Brain::Brain()
 	std::cout << "Default Brain constructor called." << std::endl;
 }
 
+Brain::Brain(Brain & src)
+{
+	this->_ideas[0] = src.getIdea(0);
+}
+
 Brain::Brain(std::string ideas[])
 {
 	std::cout << "Parametric Brain constructor called." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:27:57 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 14:50:05 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,22 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-
-class ICharacter
-{
-public:
-	ICharacter();
-	ICharacter(std::string const & name);
-	virtual ~ICharacter() {}
-	ICharacter & operator=(ICharacter & character);
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter & target) = 0;
-	virtual std::string const & getInventory(int i) const;
-	virtual void setInventory(AMateria * m, int i);
-};
+#include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
 private:
 	std::string _name;
-	AMateria * _inventory;
+	AMateria * _inventory[4];
 public:
 	Character();
 	Character(std::string const & name);
 	virtual ~Character() {}
 	Character & operator=(Character & character);
-	virtual std::string const & getName() const;
-	virtual void equip(AMateria* m);
-	virtual void unequip(int idx);
-	virtual void use(int idx, Character & target);
-	virtual std::string const & getInventory(int i) const;
-	virtual void setInventory(AMateria * m, int i);
+	std::string const & getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, Character & target);
+	std::string const & getInventory(int i) const;
+	void setInventory(AMateria * m, int i);
 };

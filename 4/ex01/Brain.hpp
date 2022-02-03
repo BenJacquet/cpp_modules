@@ -21,6 +21,7 @@ private:
 	std::string _ideas[100];
 public:
 	Brain();
+	Brain(Brain & src);
 	Brain(std::string ideas[]);
 	~Brain();
 	Brain & operator=(Brain & brain);

@@ -17,6 +17,11 @@ Dog::Dog() : _type("Dog")
 	std::cout << "Default Dog constructor called." << std::endl;
 }
 
+Dog::Dog(Dog & src)
+{
+	this->_type = src.getType();
+}
+
 Dog::Dog(std::string const type) : _type(type)
 {
 	std::cout << "Parametric Dog constructor called." << std::endl;	

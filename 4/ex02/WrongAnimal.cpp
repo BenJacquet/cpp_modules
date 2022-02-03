@@ -18,6 +18,11 @@ WrongAnimal::WrongAnimal()
 	std::cout << "Default WrongAnimal constructor called." << std::endl;
 }
 
+WrongAnimal::WrongAnimal(WrongAnimal & src)
+{
+	this->_type = src.getType();
+}
+
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
 	std::cout << "Parametric WrongAnimal constructor called." << std::endl;	

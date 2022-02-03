@@ -21,6 +21,7 @@ protected:
 	std::string _type;
 public:
 	Animal();
+	Animal(Animal & src);
 	Animal(std::string type);
 	virtual ~Animal() = 0;
 	Animal & operator=(Animal & animal);
