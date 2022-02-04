@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:58:17 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 12:20:02 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:24:05 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int		main(int ac, char **av)
 {
 	if (ac != 4)
+	{
+		std::cout << "Invalid number of arguments" << std::endl;
 		return (1);
+	}
 	std::string		replace = av[1];
 	replace += ".replace";
 	std::string		buffer;
@@ -23,8 +26,11 @@ int		main(int ac, char **av)
 	std::string		s2 = av[3];
 	int				pos = 0;
 
-	if (ac != 4 || s1[0] == '\0')
+	if (s1[0] == '\0')
+	{
+		std::cout << "String to replace is empty" << std::endl;
 		return (1);
+	}
 	std::ifstream	myFile(av[1]);
 	if (myFile.is_open())
 	{
