@@ -1,8 +1,8 @@
 NAME = megaphone
 
-SRCS = srcs/megaphone.cpp
+SRCS = megaphone.cpp
 
-INCS = incs/megaphone.hpp
+INCS = megaphone.hpp
 
 CC = c++
 
@@ -12,7 +12,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
-srcs/megaphone.o : $(INCS)
+megaphone.o : $(INCS)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)

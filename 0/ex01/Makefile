@@ -1,11 +1,11 @@
 NAME = PhoneBook
 
-SRCS =  srcs/main.cpp \
-		srcs/PhoneBook.class.cpp \
-		srcs/Contact.class.cpp
+SRCS =  main.cpp \
+		PhoneBook.class.cpp \
+		Contact.class.cpp
 
-INCS =  incs/PhoneBook.class.hpp \
-		incs/Contact.class.hpp
+INCS =  PhoneBook.class.hpp \
+		Contact.class.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -15,12 +15,12 @@ CFLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
-srcs/main.o : $(INCS)
+main.o : $(INCS)
 
 $(OBJS) : $(INCS)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean :
 	rm -rf $(OBJS)

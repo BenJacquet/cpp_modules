@@ -6,11 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:04:43 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 15:28:36 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:51:49 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/megaphone.hpp"
+#include "megaphone.hpp"
 
 int	main(int ac, char **av)
 {

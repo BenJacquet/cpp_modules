@@ -6,12 +6,12 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:18:19 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 16:12:14 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:51:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/PhoneBook.class.hpp"
-#include "../incs/Contact.class.hpp"
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
 
 PhoneBook::PhoneBook(void)
 {

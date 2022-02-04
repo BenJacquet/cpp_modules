@@ -6,11 +6,11 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:06:53 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 16:11:28 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:51:37 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/Contact.class.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact(void)
 {

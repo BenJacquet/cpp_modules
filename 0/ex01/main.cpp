@@ -6,12 +6,12 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:39:15 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/21 16:12:54 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:51:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/PhoneBook.class.hpp"
-#include "../incs/Contact.class.hpp"
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
 
 std::string	truncate(std::string data, int maxchars)
 {
