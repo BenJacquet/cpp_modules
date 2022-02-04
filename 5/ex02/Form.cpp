@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:59:27 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:59:14 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:56:55 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,22 @@ Form & Form::operator=(Form & form)
 	return (*this);
 }
 
-std::string const Form::getName()
+std::string const Form::getName() const
 {
 	return (this->_name);
 }
 
-bool Form::getSigned()
+bool Form::getSigned() const
 {
 	return (this->_signed);
 }
 
-int Form::getSignLvl()
+int Form::getSignLvl() const
 {
 	return (this->_signlvl);
 }
 
-int Form::getExecLvl()
+int Form::getExecLvl() const
 {
 	return (this->_execlvl);
 }
@@ -112,9 +112,28 @@ void Form::beSigned(Bureaucrat & bureaucrat)
 	}
 }
 
-bool Form::checkLvl(Bureaucrat & bureaucrat)
+bool Form::checkExecLvl(Bureaucrat const & bureaucrat)
 {
-	
+	bool	status = false;
+
+	try
+	{
+		if (bureaucrat.getGrade() > this->getExecLvl())
+			throw Form::GradeTooLowException();
+		else if (this->_signed == false)
+			throw Form::NotSignedException();
+		else
+			status = true;
+	}
+	catch (GradeTooLowException low)
+	{
+		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
+	}
+	catch (NotSignedException nosign)
+	{
+		std::cout << this->getName() << " form: " << nosign.getMessage() << std::endl;
+	}
+	return (status);
 }
 
 std::ostream & operator<<(std::ostream & COUT, Form & form)
@@ -152,6 +171,21 @@ Form::GradeTooLowException::~GradeTooLowException()
 }
 
 std::string Form::GradeTooLowException::getMessage()
+{
+	return (this->_msg);
+}
+
+Form::NotSignedException::NotSignedException()
+{
+	this->_msg = "form is not signed.";
+}
+
+Form::NotSignedException::~NotSignedException()
+{
+	
+}
+
+std::string Form::NotSignedException::getMessage()
 {
 	return (this->_msg);
 }

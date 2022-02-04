@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:57:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 13:00:03 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:15:55 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ public:
 	Form(std::string const name, int const signlvl, int const execlvl);
 	~Form();
 	Form & operator=(Form & form);
-	std::string const getName();
-	bool getSigned();
-	int getSignLvl();
-	int getExecLvl();
+	std::string const getName() const;
+	bool getSigned() const;
+	int getSignLvl() const;
+	int getExecLvl() const;
 	void beSigned(Bureaucrat & bureaucrat);
 };
 

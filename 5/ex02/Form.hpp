@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:57:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:58:11 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 18:51:53 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ protected:
 	bool _signed;
 	int const _signlvl;
 	int const _execlvl;
-	class GradeTooHighException : public std::exception
+
+	class GradeTooHighException
 	{
 	private:
 		std::string _msg;
@@ -35,7 +36,7 @@ protected:
 		~GradeTooHighException();
 		std::string getMessage();
 	};
-	class GradeTooLowException : public std::exception
+	class GradeTooLowException
 	{
 	private:
 		std::string _msg;
@@ -44,18 +45,28 @@ protected:
 		~GradeTooLowException();
 		std::string getMessage();
 	};
+	class NotSignedException
+	{
+	private:
+		std::string _msg;
+	public:
+		NotSignedException();
+		~NotSignedException();
+		std::string getMessage();
+	};
+
 public:
 	Form();
 	Form(Form & src);
 	Form(std::string const name, int const signlvl, int const execlvl);
 	virtual ~Form() = 0;
 	Form & operator=(Form & form);
-	std::string const getName();
-	bool getSigned();
-	int getSignLvl();
-	int getExecLvl();
+	std::string const getName() const;
+	bool getSigned() const;
+	int getSignLvl() const;
+	int getExecLvl() const;
 	void beSigned(Bureaucrat & bureaucrat);
-	bool checkLvl(Bureaucrat & bureaucrat);
+	bool checkExecLvl(Bureaucrat const & bureaucrat);
 };
 
 std::ostream & operator<<(std::ostream & COUT, Form & form);

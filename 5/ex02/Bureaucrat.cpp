@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:11:57 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 18:25:11 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ void Bureaucrat::operator--(int)
 	}
 }
 
-std::string const Bureaucrat::getName()
+std::string const Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }
@@ -106,6 +106,27 @@ void Bureaucrat::signForm(Form & form)
 	catch (GradeTooLowException low)
 	{
 		std::cout << this->getName() << " couldn't sign " << form.getName() << " because their " << low.getMessage() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		if (this->_grade > form.getExecLvl())
+			throw Bureaucrat::GradeTooLowException();
+		else if (form.getSigned() == false)
+			throw Bureaucrat::NotSignedException();
+		else
+			std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (GradeTooLowException low)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because their " << low.getMessage() << std::endl;
+	}
+	catch (NotSignedException nosign)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because their " << nosign.getMessage() << std::endl;
 	}
 }
 
@@ -135,6 +156,21 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException()
 }
 
 std::string Bureaucrat::GradeTooLowException::getMessage()
+{
+	return (this->_msg);
+}
+
+Bureaucrat::NotSignedException::NotSignedException()
+{
+	this->_msg = "form is not signed.";
+}
+
+Bureaucrat::NotSignedException::~NotSignedException()
+{
+	
+}
+
+std::string Bureaucrat::NotSignedException::getMessage()
 {
 	return (this->_msg);
 }

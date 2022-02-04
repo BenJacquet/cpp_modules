@@ -6,41 +6,54 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:35:13 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 18:48:14 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form(), _target("none"), _name("presidentialpardon"), _signed(false), _signlvl(72), _execlvl(45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("presidentialpardon", 72, 45), _target("none")
 {
 	std::cout << "Default constructor for RobotomyRequestForm called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & src) : Form(src), _target(src.getTarget()), _name(src.getName()), _signed(src.getSigned()), _signlvl(src.getSignLvl()), _execlvl(src.getExecLvl())
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & src) : Form(src), _target(src.getTarget())
 {
 	std::cout << "Copy constructor for RobotomyRequestForm called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("presidentialpardon", 72, 45), _target(target)
 {
 	std::cout << "Parametric constructor for RobotomyRequestForm called" << std::endl;
-	this::Form._signlvl = 72;
-	this::Form._execlvl = 45;
 }
 
-~RobotomyRequestForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "Destructor for RobotomyRequestForm called" << std::endl;
 }
 
-RobotomyRequestForm & operator=(RobotomyRequestForm & src)
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm & src)
 {
 	this->_signed = src.getSigned();
 	return (*this);
 }
 
-RobotomyRequestForm::execute(Bureaucrat const & executor)
+std::string RobotomyRequestForm::getTarget() const
 {
-	
+	return (this->_target);
+}
+
+void RobotomyRequestForm::robotomize()
+{
+	srand(time(NULL));
+	std::cout << "Dziiiiit Dziiiiit Dziiiiiit!" << std::endl;
+	if ((rand() % 2) + 1 == 2)
+		std::cout << this->_target << "'s robotomy is a success!" << std::endl;
+	else
+		std::cout << this->_target << "'s robotomy failed..." << std::endl;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor)
+{
+	executor.getName();
 }

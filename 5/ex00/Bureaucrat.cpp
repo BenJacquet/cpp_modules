@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 10:41:19 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:16:04 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,12 @@ void Bureaucrat::operator--(int)
 	}
 }
 
-std::string const Bureaucrat::getName()
+std::string const Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }

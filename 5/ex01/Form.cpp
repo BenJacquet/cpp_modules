@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:59:27 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:05:51 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:45:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,22 @@ Form & Form::operator=(Form & form)
 	return (*this);
 }
 
-std::string const Form::getName()
+std::string const Form::getName() const
 {
 	return (this->_name);
 }
 
-bool Form::getSigned()
+bool Form::getSigned() const
 {
 	return (this->_signed);
 }
 
-int Form::getSignLvl()
+int Form::getSignLvl() const
 {
 	return (this->_signlvl);
 }
 
-int Form::getExecLvl()
+int Form::getExecLvl() const
 {
 	return (this->_execlvl);
 }

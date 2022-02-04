@@ -6,13 +6,13 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:32:29 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 15:12:23 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:43:00 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : _name(name)
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {
 	return;
 }

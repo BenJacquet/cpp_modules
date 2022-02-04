@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:04 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:44:26 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 18:05:01 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	PresidentialPardonForm(std::string target);
 	~PresidentialPardonForm();
 	PresidentialPardonForm & operator=(PresidentialPardonForm & src);
-	execute(Bureaucrat const & executor);
+	void execute(Bureaucrat const & executor);
+	void pardon();
 	std::string getTarget() const;
 };

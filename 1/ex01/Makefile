@@ -2,8 +2,7 @@ NAME = Moar
 
 SRCS = main.cpp \
 	Zombie.cpp \
-	newZombie.cpp \
-	ZombieHorde.cpp
+	ZombieHorde.cpp \
 
 INCS = Zombie.hpp
 

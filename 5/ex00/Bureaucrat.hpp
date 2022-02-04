@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 10:36:12 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:16:12 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ public:
 	Bureaucrat & operator=(Bureaucrat & bureaucrat);
 	void operator++(int);
 	void operator--(int);
-	std::string const getName();
-	int getGrade();
+	std::string const getName() const;
+	int getGrade() const;
 };
 
 std::ostream & operator<<(std::ostream & COUT, Bureaucrat & bureaucrat);

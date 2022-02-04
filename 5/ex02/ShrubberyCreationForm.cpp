@@ -6,63 +6,56 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 14:32:21 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 18:52:34 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("presidentialpardon", 145, 137), _target("none")
 {
 	std::cout << "Default constructor for ShrubberyCreationForm called" << std::endl;
-	this->_target = "none";
-	this::Form._signlvl = 145;
-	this::Form._execlvl = 137;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm & src) : Form(src), _target(src.getTarget()), _name(src.getName()), _signed(src.getSigned()), _signlvl(src.getSignLvl()), _execlvl(src.getExecLvl())
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm & src) : Form(src), _target(src.getTarget())
 {
 	std::cout << "Copy constructor for ShrubberyCreationForm called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("presidentialpardon", 145, 137), _target(target)
 {
 	std::cout << "Parametric constructor for ShrubberyCreationForm called" << std::endl;
-	this::Form._signlvl = 145;
-	this::Form._execlvl = 137;
 }
 
-~ShrubberyCreationForm()
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "Destructor for ShrubberyCreationForm called" << std::endl;
 }
 
-ShrubberyCreationForm & operator=(ShrubberyCreationForm & src)
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm & src)
 {
 	this->_signed = src.getSigned();
 	return (*this);
 }
 
-ShrubberyCreationForm::execute(Bureaucrat const & executor)
+std::string ShrubberyCreationForm::getTarget() const
 {
-	try
+	return (this->_target);
+}
+
+void ShrubberyCreationForm::makeShrubbery()
+{
+	std::ofstream shrubbery(this->_target.c_str());
+
+	if (shrubbery.is_open())
 	{
-		if (this->_execlvl > 150 || this->_execlvl > 150)
-			throw Form::GradeTooLowException();
-		else if (this->_execlvl < 1 || this->_execlvl < 1)
-			throw Form::GradeTooHighException();
-		else
-		{
-			Bureaucrat.signForm(Form & form);
-			this->_signed = true;
-		}
+		shrubbery << TREES << TREES << TREES << std::endl;
 	}
-	catch (GradeTooLowException low)
-	{
-		std::cout << this->getName() << " form, " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "form, " << high.getMessage() << std::endl;
-	}
+	else
+	std::cout << "Could not open or create file" << std::endl;
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+{
+	executor.getName();
 }

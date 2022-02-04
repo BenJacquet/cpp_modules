@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 12:59:58 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:15:33 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ public:
 	Bureaucrat & operator=(Bureaucrat & bureaucrat);
 	void operator++(int);
 	void operator--(int);
-	std::string const getName();
-	int getGrade();
+	std::string const getName() const;
+	int getGrade() const;
 	void signForm(Form & form);
 };
 
