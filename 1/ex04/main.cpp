@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:58:17 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 12:18:20 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:20:02 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int		main(int ac, char **av)
 	std::string		s2 = av[3];
 	int				pos = 0;
 
-	std::cout << "s1 :" << s1 << std::endl;
-	std::cout << "s2 :" << s2 << std::endl;
 	if (ac != 4 || s1[0] == '\0')
 		return (1);
 	std::ifstream	myFile(av[1]);
