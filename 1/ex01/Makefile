@@ -9,17 +9,17 @@ INCS = Zombie.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
 %.o : %.cpp $(INCS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 clean :
 	rm -rf $(OBJS)

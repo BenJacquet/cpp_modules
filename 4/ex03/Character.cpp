@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:25 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/03 18:23:57 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:25:53 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ Character::Character()
 	this->_inventory[1] = NULL;
 	this->_inventory[2] = NULL;
 	this->_inventory[3] = NULL;
+}
+
+Character::Character(Character & src)
+{
+	std::cout << "Copy constructor for Character class called." << std::endl;
+	this->_name = src.getName();
+	this->_inventory[0] = src._inventory[0];
+	this->_inventory[1] = src._inventory[1];
+	this->_inventory[2] = src._inventory[2];
+	this->_inventory[3] = src._inventory[3];
 }
 
 Character::Character(std::string const & name) : _name(name)
@@ -66,7 +76,7 @@ std::string const & Character::getInventory(int i) const
 
 void Character::setInventory(AMateria * m, int i)
 {
-	this->_inventory[i] = *m;
+	this->_inventory[i] = m;
 }
 
 void Character::unequip(int idx)

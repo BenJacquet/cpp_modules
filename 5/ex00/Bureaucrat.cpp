@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 16:12:03 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:41:19 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,26 @@
 Bureaucrat::Bureaucrat()
 {
 	std::cout << "Default constructor for Bureaucrat called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat & src) : _name(src.getName()), _grade(src.getGrade())
+{
+	std::cout << "Copy constructor for Bureaucrat called" << std::endl;
+	try
+	{
+		if (this->_grade > 150)
+			throw Bureaucrat::GradeTooLowException();
+		else if (this->_grade < 1)
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch (GradeTooLowException low)
+	{
+		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
+	}
+	catch (GradeTooHighException high)
+	{
+		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name), _grade(grade)

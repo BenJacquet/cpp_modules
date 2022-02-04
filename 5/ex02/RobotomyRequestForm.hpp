@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:07 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 14:44:54 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:32:57 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	std::string _target;
 public:
 	RobotomyRequestForm();
+	RobotomyRequestForm(RobotomyRequestForm & src);
 	RobotomyRequestForm(std::string target);
 	~RobotomyRequestForm();
 	RobotomyRequestForm & operator=(RobotomyRequestForm & src);

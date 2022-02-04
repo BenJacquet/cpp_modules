@@ -9,18 +9,17 @@ INCS =  PhoneBook.class.hpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
-main.o : $(INCS)
-
-$(OBJS) : $(INCS)
+%.o : %.cpp $(INCS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean :
 	rm -rf $(OBJS)

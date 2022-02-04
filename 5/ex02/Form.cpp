@@ -6,25 +6,20 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:59:27 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 12:10:09 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:59:14 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()
+Form::Form() : _name("empty"), _signed(false), _signlvl(150), _execlvl(150)
 {
 	std::cout << "Default constructor for Form called" << std::endl;
-	this->_signed = false;
-	this->_name = "empty";
-	this->_execlvl = 150;
-	this->_signlvl = 150;
 }
 
-Form::Form(std::string const name, int const signlvl, int const execlvl) : _name(name), _signlvl(signlvl), _execlvl(execlvl)
+Form::Form(Form & src) : _name(src.getName()), _signed(src.getSigned()), _signlvl(src.getSignLvl()), _execlvl(src.getExecLvl())
 {
-	std::cout << "Parametric constructor for Form called" << std::endl;
-	this->_signed = false;
+	std::cout << "Copy constructor for Form called" << std::endl;
 	try
 	{
 		if (this->_signlvl > 150 || this->_execlvl > 150)
@@ -34,11 +29,31 @@ Form::Form(std::string const name, int const signlvl, int const execlvl) : _name
 	}
 	catch (GradeTooLowException low)
 	{
-		std::cout << this->getName() << " form, " << low.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
 	}
 	catch (GradeTooHighException high)
 	{
-		std::cout << this->getName() << "form, " << high.getMessage() << std::endl;
+		std::cout << this->getName() << "form: " << high.getMessage() << std::endl;
+	}
+}
+
+Form::Form(std::string const name, int const signlvl, int const execlvl) : _name(name), _signed(false), _signlvl(signlvl), _execlvl(execlvl)
+{
+	std::cout << "Parametric constructor for Form called" << std::endl;
+	try
+	{
+		if (this->_signlvl > 150 || this->_execlvl > 150)
+			throw Form::GradeTooLowException();
+		else if (this->_signlvl < 1 || this->_execlvl < 1)
+			throw Form::GradeTooHighException();
+	}
+	catch (GradeTooLowException low)
+	{
+		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
+	}
+	catch (GradeTooHighException high)
+	{
+		std::cout << this->getName() << "form: " << high.getMessage() << std::endl;
 	}
 }
 
@@ -49,7 +64,7 @@ Form::~Form()
 
 Form & Form::operator=(Form & form)
 {
-	this->_signed = form.getSigned;
+	this->_signed = form.getSigned();
 	return (*this);
 }
 
@@ -63,17 +78,17 @@ bool Form::getSigned()
 	return (this->_signed);
 }
 
-const int Form::getSignLvl()
+int Form::getSignLvl()
 {
 	return (this->_signlvl);
 }
 
-const int Form::getExecLvl()
+int Form::getExecLvl()
 {
 	return (this->_execlvl);
 }
 
-void Form::beSigned(Bureaucrat & Bureaucrat)
+void Form::beSigned(Bureaucrat & bureaucrat)
 {
 	try
 	{
@@ -83,26 +98,31 @@ void Form::beSigned(Bureaucrat & Bureaucrat)
 			throw Form::GradeTooHighException();
 		else
 		{
-			Bureaucrat.signForm(Form & form);
+			bureaucrat.signForm(*this);
 			this->_signed = true;
 		}
 	}
 	catch (GradeTooLowException low)
 	{
-		std::cout << this->getName() << " form, " << low.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
 	}
 	catch (GradeTooHighException high)
 	{
-		std::cout << this->getName() << "form, " << high.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << high.getMessage() << std::endl;
 	}
+}
+
+bool Form::checkLvl(Bureaucrat & bureaucrat)
+{
+	
 }
 
 std::ostream & operator<<(std::ostream & COUT, Form & form)
 {
 	COUT << "Form name : " << form.getName() << std::endl
 	<< "Signed : " << form.getSigned() << std::endl
-	<< "Sign grade required : " << form.getSignLvl << std::endl
-	<< "Execution grade required : " << form.getExecLvl << std::endl
+	<< "Sign grade required : " << form.getSignLvl() << std::endl
+	<< "Execution grade required : " << form.getExecLvl() << std::endl;
 	return (COUT);
 }
 

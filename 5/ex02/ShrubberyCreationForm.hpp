@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:12 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 14:44:52 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:32:09 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	std::string _target;
 public:
 	ShrubberyCreationForm();
+	ShrubberyCreationForm(ShrubberyCreationForm & src);
 	ShrubberyCreationForm(std::string target);
 	~ShrubberyCreationForm();
 	ShrubberyCreationForm & operator=(ShrubberyCreationForm & src);

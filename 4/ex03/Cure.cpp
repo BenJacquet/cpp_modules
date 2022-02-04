@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:21:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/31 16:27:21 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:41:45 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Cure::Cure()
 {
 	this->_type = "cure";
 	std::cout << "Default constructor for Cure class called." << std::endl;
+}
+
+Cure::Cure(Cure & src)
+{
+	std::cout << "Copy constructor for Cure class called." << std::endl;
+	this->_type = src.getType();
 }
 
 Cure::Cure(std::string const & type) : _type(type)

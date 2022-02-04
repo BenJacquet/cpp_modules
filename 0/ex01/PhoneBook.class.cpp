@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:18:19 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 09:51:28 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 11:23:44 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PhoneBook::~PhoneBook(void)
 	return;
 }
 
-void		PhoneBook::loop(int ac, char **av)
+void		PhoneBook::loop()
 {
 	int			i = 0, index = -1;
 	std::string	cmd;
@@ -58,7 +58,7 @@ void		PhoneBook::loop(int ac, char **av)
 				cmd.clear();
 				std::cout << "Input a contact index :" << std::endl;
 				std::getline(std::cin, cmd);
-				if (good_index(cmd, this->contacts, &index) == false)
+				if (good_index(cmd, this->contacts, index) == false)
 					std::cout << "Invalid input or contact is empty." << std::endl;
 				else
 					this->contacts[index - 1].get_data_full(index - 1);

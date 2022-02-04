@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/03 14:50:05 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:24:32 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ private:
 	AMateria * _inventory[4];
 public:
 	Character();
+	Character(Character & src);
 	Character(std::string const & name);
-	virtual ~Character() {}
+	~Character() {}
 	Character & operator=(Character & character);
 	std::string const & getName() const;
 	void equip(AMateria* m);

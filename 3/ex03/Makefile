@@ -13,16 +13,17 @@ INCS = ClapTrap.hpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-main.o : $(INCS)
+%.o : %.cpp $(INCS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 clean :
 	rm -rf $(OBJS)

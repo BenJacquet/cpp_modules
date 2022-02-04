@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:06:54 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:34:11 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:12:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,4 @@ public:
 };
 
 std::string		truncate(std::string data, int maxchars);
-bool			good_index(std::string cmd, Contact *contact, int *index);
+bool			good_index(std::string cmd, Contact *contact, int & index);

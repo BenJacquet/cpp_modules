@@ -15,16 +15,17 @@ INCS = Bureaucrat.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-main.o : $(INCS)
+%.o : %.cpp $(INCS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 clean :
 	rm -rf $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:57:32 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 14:29:41 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:58:11 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
-private:
+protected:
 	std::string const _name;
 	bool _signed;
 	int const _signlvl;
@@ -44,14 +46,16 @@ private:
 	};
 public:
 	Form();
+	Form(Form & src);
 	Form(std::string const name, int const signlvl, int const execlvl);
 	virtual ~Form() = 0;
 	Form & operator=(Form & form);
 	std::string const getName();
-	virtual bool getSigned();
-	virtual const int getSignLvl();
-	virtual const int getExecLvl();
-	virtual void beSigned(Bureaucrat & Bureaucrat);
+	bool getSigned();
+	int getSignLvl();
+	int getExecLvl();
+	void beSigned(Bureaucrat & bureaucrat);
+	bool checkLvl(Bureaucrat & bureaucrat);
 };
 
 std::ostream & operator<<(std::ostream & COUT, Form & form);

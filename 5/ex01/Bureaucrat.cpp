@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 12:10:50 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:08:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,11 @@ void Bureaucrat::signForm(Form & form)
 		if (this->_grade > form.getSignLvl())
 			throw Bureaucrat::GradeTooLowException();
 		else
-			std::cout << this->getName() << " signed " << form.getName();
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
 	catch (GradeTooLowException low)
 	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << low.getMessage() << std::endl;
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because their " << low.getMessage() << std::endl;
 	}
 }
 

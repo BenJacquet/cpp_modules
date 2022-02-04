@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:27:36 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:36:12 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ private:
 	};
 public:
 	Bureaucrat();
+	Bureaucrat(Bureaucrat & src);
 	Bureaucrat(std::string const name, int const grade);
 	~Bureaucrat();
 	Bureaucrat & operator=(Bureaucrat & bureaucrat);

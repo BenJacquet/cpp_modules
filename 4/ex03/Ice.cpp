@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/01 12:04:32 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:42:06 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Ice::Ice()
 {
 	this->_type = "ice";
 	std::cout << "Default constructor for Ice class called." << std::endl;
+}
+
+Ice::Ice(Ice & src)
+{
+	std::cout << "Copy constructor for Ice class called." << std::endl;
+	this->_type = src.getType();
 }
 
 Ice::Ice(std::string const & type) : _type(type)

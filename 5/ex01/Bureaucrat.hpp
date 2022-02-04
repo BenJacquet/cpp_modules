@@ -6,16 +6,18 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 12:01:53 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:59:58 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
+#include <string>
 #include <exception>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {

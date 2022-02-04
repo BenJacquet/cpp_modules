@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:22:18 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 11:28:05 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:42:46 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ protected:
 
 public:
 	Cure();
+	Cure(Cure & src);
 	Cure(std::string const & type);
 	~Cure();
 	Cure & operator=(Cure & materia);

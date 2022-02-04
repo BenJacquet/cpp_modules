@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:17:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 09:51:33 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 11:23:49 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ private:
 public:
 	PhoneBook(void);
 	~PhoneBook(void);
-	void	loop(int ac, char **av);
+	void	loop();
 };

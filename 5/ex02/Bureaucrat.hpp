@@ -6,16 +6,18 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/02 14:47:23 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:55:33 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
+#include <string>
 #include <exception>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -45,12 +47,11 @@ public:
 	Bureaucrat(std::string const name, int const grade);
 	~Bureaucrat();
 	Bureaucrat & operator=(Bureaucrat & bureaucrat);
-	operator++(int);
-	operator--(int);
+	void operator++(int);
+	void operator--(int);
 	std::string const getName();
 	int getGrade();
-	signForm(Form & form);
-	executeForm(Form const & form);
+	void signForm(Form & form);
 };
 
 std::ostream & operator<<(std::ostream & COUT, Bureaucrat & bureaucrat);

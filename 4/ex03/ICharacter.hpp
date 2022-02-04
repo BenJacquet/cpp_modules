@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:48:30 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/03 14:50:24 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:24:48 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ class ICharacter
 {
 public:
 	ICharacter();
+	ICharacter(Character & src);
 	ICharacter(std::string const & name);
 	virtual ~ICharacter() {}
 	ICharacter & operator=(ICharacter & character);
-	virtual std::string const & getName() const = 0;
+	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m) = 0;
 	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter & target) = 0;
+	virtual void use(int idx, ICharacter & target);
 	virtual std::string const & getInventory(int i) const;
 	virtual void setInventory(AMateria * m, int i);
 };
