@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:58:17 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:12:45 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:18:20 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		main(int ac, char **av)
 	std::string		s2 = av[3];
 	int				pos = 0;
 
-	if (ac != 4 && s1[0] == '\0')
+	std::cout << "s1 :" << s1 << std::endl;
+	std::cout << "s2 :" << s2 << std::endl;
+	if (ac != 4 || s1[0] == '\0')
 		return (1);
 	std::ifstream	myFile(av[1]);
 	if (myFile.is_open())
@@ -33,8 +35,10 @@ int		main(int ac, char **av)
 		{
 			while (std::getline(myFile, buffer))
 			{
-				while ((pos = buffer.find(s1)) != std::string::npos)
+				int	shift = 0;
+				while ((pos = buffer.find(s1, shift)) != (int)std::string::npos && s1.compare(s2) != 0)
 				{
+					shift = pos + s2.length();
 					buffer.erase(pos, s1.length());
 					buffer.insert(pos, s2);
 				}
@@ -43,9 +47,7 @@ int		main(int ac, char **av)
 					replaceFile << std::endl;
 				buffer.clear();
 			}
-			replaceFile.close();
 		}
-		myFile.close();
 	}
 	else
 	{

@@ -13,10 +13,11 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all : $(NAME)
 
+%.o : %.cpp $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
-
-main.o : $(INCS)
 
 clean :
 	rm -rf $(OBJS)

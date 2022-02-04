@@ -17,7 +17,8 @@ CFLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
-main.o : $(INCS)
+%.o : %.cpp $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
