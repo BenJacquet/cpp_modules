@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 18:25:11 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:57:14 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name), _
 		else if (this->_grade < 1)
 			throw Bureaucrat::GradeTooHighException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -63,9 +59,9 @@ void Bureaucrat::operator++(int)
 		else
 			throw Bureaucrat::GradeTooHighException();
 	}
-	catch (GradeTooHighException high)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -78,9 +74,9 @@ void Bureaucrat::operator--(int)
 		else
 			throw Bureaucrat::GradeTooLowException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -96,16 +92,24 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::signForm(Form & form)
 {
-	try
+	if (form.getSigned() == true)
+		std::cout << this->_name << " couldn't sign form " << form.getName() << " because it is already signed." << std::endl;
+	else
 	{
-		if (this->_grade > form.getSignLvl())
-			throw Bureaucrat::GradeTooLowException();
-		else
-			std::cout << this->getName() << " signed " << form.getName() << std::endl;
-	}
-	catch (GradeTooLowException low)
-	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " because their " << low.getMessage() << std::endl;
+		try
+		{
+			if (this->_grade > form.getSignLvl())
+				throw Bureaucrat::GradeTooLowException();
+			else
+			{
+				form.setSigned(true);
+				std::cout << this->getName() << " signed " << form.getName() << std::endl;
+			}
+		}
+		catch (std::exception & exception)
+		{
+			std::cout << this->getName() << " couldn't sign " << form.getName() << " because their " << exception.what() << std::endl;
+		}
 	}
 }
 
@@ -113,64 +117,45 @@ void Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{
-		if (this->_grade > form.getExecLvl())
+		if (this->getGrade() > form.getExecLvl())
 			throw Bureaucrat::GradeTooLowException();
 		else if (form.getSigned() == false)
 			throw Bureaucrat::NotSignedException();
 		else
+		{
+			form.executeForm();
 			std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		}
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << " couldn't execute " << form.getName() << " because their " << low.getMessage() << std::endl;
-	}
-	catch (NotSignedException nosign)
-	{
-		std::cout << this->getName() << " couldn't execute " << form.getName() << " because their " << nosign.getMessage() << std::endl;
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << exception.what() << std::endl;
 	}
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException()
+Bureaucrat::GradeTooHighException::GradeTooHighException() throw() {}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	this->_msg = "grade is too high!";
+	return ("grade is too high.");
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException()
+Bureaucrat::GradeTooLowException::GradeTooLowException() throw() {}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	
+	return ("grade is too low.");
 }
 
-std::string Bureaucrat::GradeTooHighException::getMessage()
-{
-	return (this->_msg);
-}
+Bureaucrat::NotSignedException::NotSignedException() throw() {}
 
-Bureaucrat::GradeTooLowException::GradeTooLowException()
-{
-	this->_msg = "grade is too low...";
-}
+Bureaucrat::NotSignedException::~NotSignedException() throw() {}
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException()
+const char* Bureaucrat::NotSignedException::what() const throw()
 {
-	
-}
-
-std::string Bureaucrat::GradeTooLowException::getMessage()
-{
-	return (this->_msg);
-}
-
-Bureaucrat::NotSignedException::NotSignedException()
-{
-	this->_msg = "form is not signed.";
-}
-
-Bureaucrat::NotSignedException::~NotSignedException()
-{
-	
-}
-
-std::string Bureaucrat::NotSignedException::getMessage()
-{
-	return (this->_msg);
+	return ("form is not signed.");
 }

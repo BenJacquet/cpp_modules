@@ -6,13 +6,13 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:14:51 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 18:24:02 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:18:30 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("presidentialpardon", 25, 5), _target("none")
+PresidentialPardonForm::PresidentialPardonForm() : Form("presidential pardon", 25, 5), _target("none")
 {
 	std::cout << "Default constructor for PresidentialPardonForm called" << std::endl;
 }
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm & src) : F
 	std::cout << "Copy constructor for PresidentialPardonForm called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("presidentialpardon", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("presidential pardon", 25, 5), _target(target)
 {
 	std::cout << "Parametric constructor for PresidentialPardonForm called" << std::endl;
 }
@@ -48,11 +48,7 @@ void PresidentialPardonForm::pardon()
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor)
+void PresidentialPardonForm::executeForm()
 {
-	if (checkExecLvl(executor) == true)
-	{
-		executor.getName();
-		this->pardon();
-	}
+	this->pardon();
 }

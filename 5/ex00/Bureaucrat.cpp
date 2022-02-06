@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:05 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 15:16:04 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:46:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,6 @@
 Bureaucrat::Bureaucrat()
 {
 	std::cout << "Default constructor for Bureaucrat called" << std::endl;
-}
-
-Bureaucrat::Bureaucrat(Bureaucrat & src) : _name(src.getName()), _grade(src.getGrade())
-{
-	std::cout << "Copy constructor for Bureaucrat called" << std::endl;
-	try
-	{
-		if (this->_grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-		else if (this->_grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-	}
-	catch (GradeTooLowException low)
-	{
-		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
-	}
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name), _grade(grade)
@@ -47,13 +27,9 @@ Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name), _
 		else if (this->_grade < 1)
 			throw Bureaucrat::GradeTooHighException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -83,9 +59,9 @@ void Bureaucrat::operator++(int)
 		else
 			throw Bureaucrat::GradeTooHighException();
 	}
-	catch (GradeTooHighException high)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << high.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -98,9 +74,9 @@ void Bureaucrat::operator--(int)
 		else
 			throw Bureaucrat::GradeTooLowException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << "'s " << low.getMessage() << std::endl;
+		std::cout << this->getName() << "'s " << exception.what() << std::endl;
 	}
 }
 
@@ -114,32 +90,20 @@ int Bureaucrat::getGrade() const
 	return (this->_grade);
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException()
+Bureaucrat::GradeTooHighException::GradeTooHighException() throw() {}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	this->_msg = "grade is too high!";
+	return ("grade is too high.");
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException()
-{
-	
-}
+Bureaucrat::GradeTooLowException::GradeTooLowException() throw() {}
 
-std::string Bureaucrat::GradeTooHighException::getMessage()
-{
-	return (this->_msg);
-}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
-Bureaucrat::GradeTooLowException::GradeTooLowException()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	this->_msg = "grade is too low...";
-}
-
-Bureaucrat::GradeTooLowException::~GradeTooLowException()
-{
-	
-}
-
-std::string Bureaucrat::GradeTooLowException::getMessage()
-{
-	return (this->_msg);
+	return ("grade is too low.");
 }

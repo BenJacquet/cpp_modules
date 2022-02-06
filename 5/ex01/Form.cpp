@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:59:27 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 15:45:28 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:57:12 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ Form::Form(Form & src) : _name(src.getName()), _signed(src.getSigned()), _signlv
 		else if (this->_signlvl < 1 || this->_execlvl < 1)
 			throw Form::GradeTooHighException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "form: " << high.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << exception.what() << std::endl;
 	}
 }
 
@@ -47,13 +43,9 @@ Form::Form(std::string const name, int const signlvl, int const execlvl) : _name
 		else if (this->_signlvl < 1 || this->_execlvl < 1)
 			throw Form::GradeTooHighException();
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << "form: " << high.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << exception.what() << std::endl;
 	}
 }
 
@@ -78,6 +70,11 @@ bool Form::getSigned() const
 	return (this->_signed);
 }
 
+void Form::setSigned(bool sign)
+{
+	this->_signed = sign;
+}
+
 int Form::getSignLvl() const
 {
 	return (this->_signlvl);
@@ -97,18 +94,11 @@ void Form::beSigned(Bureaucrat & bureaucrat)
 		else if (this->_signlvl < 1 || this->_execlvl < 1)
 			throw Form::GradeTooHighException();
 		else
-		{
 			bureaucrat.signForm(*this);
-			this->_signed = true;
-		}
 	}
-	catch (GradeTooLowException low)
+	catch (std::exception & exception)
 	{
-		std::cout << this->getName() << " form: " << low.getMessage() << std::endl;
-	}
-	catch (GradeTooHighException high)
-	{
-		std::cout << this->getName() << " form: " << high.getMessage() << std::endl;
+		std::cout << this->getName() << " form: " << exception.what() << std::endl;
 	}
 }
 
@@ -121,32 +111,20 @@ std::ostream & operator<<(std::ostream & COUT, Form & form)
 	return (COUT);
 }
 
-Form::GradeTooHighException::GradeTooHighException()
+Form::GradeTooHighException::GradeTooHighException() throw() {}
+
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+
+const char* Form::GradeTooHighException::what() const throw()
 {
-	this->_msg = "grade is too high.";
+	return ("grade is too high.");
 }
 
-Form::GradeTooHighException::~GradeTooHighException()
-{
-	
-}
+Form::GradeTooLowException::GradeTooLowException() throw() {}
 
-std::string Form::GradeTooHighException::getMessage()
-{
-	return (this->_msg);
-}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
-Form::GradeTooLowException::GradeTooLowException()
+const char* Form::GradeTooLowException::what() const throw()
 {
-	this->_msg = "grade is too low.";
-}
-
-Form::GradeTooLowException::~GradeTooLowException()
-{
-	
-}
-
-std::string Form::GradeTooLowException::getMessage()
-{
-	return (this->_msg);
+	return ("grade is too low.");
 }

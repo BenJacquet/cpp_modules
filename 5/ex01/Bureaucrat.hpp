@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:20:10 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 15:15:33 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:46:35 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
 #include "Form.hpp"
 
 class Form;
@@ -24,24 +23,7 @@ class Bureaucrat
 private:
 	std::string const _name;
 	int _grade;
-	class GradeTooHighException : public std::exception
-	{
-	private:
-		std::string _msg;
-	public:
-		GradeTooHighException();
-		~GradeTooHighException();
-		std::string getMessage();
-	};
-	class GradeTooLowException : public std::exception
-	{
-	private:
-		std::string _msg;
-	public:
-		GradeTooLowException();
-		~GradeTooLowException();
-		std::string getMessage();
-	};
+
 public:
 	Bureaucrat();
 	Bureaucrat(std::string const name, int const grade);
@@ -52,6 +34,22 @@ public:
 	std::string const getName() const;
 	int getGrade() const;
 	void signForm(Form & form);
+
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		GradeTooHighException() throw();
+		~GradeTooHighException() throw();
+		virtual const char* what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		GradeTooLowException() throw();
+		~GradeTooLowException() throw();
+		virtual const char* what() const throw();
+	};
 };
 
 std::ostream & operator<<(std::ostream & COUT, Bureaucrat & bureaucrat);

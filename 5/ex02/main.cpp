@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:19:47 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 18:39:47 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:41:38 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,48 +18,67 @@
 
 int		main()
 {
-	ShrubberyCreationForm shrub("shrubbery");
-	PresidentialPardonForm pardon("Ford Prefect");
+	ShrubberyCreationForm shrubbery("shrubbery");
 	RobotomyRequestForm robotomy("Alex Murphy");
+	PresidentialPardonForm pardon("Ford Prefect");
 
-	shrub.makeShrubbery();
-	pardon.pardon();
+	shrubbery.makeShrubbery();
 	robotomy.robotomize();
-	// Bureaucrat bob("Bob", 1);
-	// Bureaucrat roy("Roy", 150);
-	// Bureaucrat george("George", 76);
+	pardon.pardon();
 
-	// std::cout << "BUREAUCRAT INFO TEST" << std::endl;
-	// std::cout << bob << std::endl;
-	// std::cout << roy << std::endl;
-	// std::cout << george << std::endl;
+	Bureaucrat bob("Bob", 1);
+	Bureaucrat roy("Roy", 150);
+	Bureaucrat george("George", 76);
 
-	// std::cout << "INVALID FORM TEST" << std::endl;
-	// Form invalid("invalid", 0, 0);
-	// Form invalid2("invalid2", 151, 151);
-	// Form topsecret("topsecret", 1, 1);
-	// Form average("average", 75, 75);
+	std::cout << std::endl << "BUREAUCRAT INFO TEST" << std::endl;
+	std::cout << bob << std::endl;
+	std::cout << roy << std::endl;
+	std::cout << george << std::endl;
 
-	// std::cout << "FORM INFO TEST" << std::endl;
-	// std::cout << topsecret << std::endl;
-	// std::cout << average << std::endl;
+	std::cout << std::endl << "FORM INFO TEST" << std::endl;
+	std::cout << shrubbery << std::endl;
+	std::cout << robotomy << std::endl;
+	std::cout << pardon << std::endl;
 
-	// std::cout << "INVALID SIGNING TEST" << std::endl;
-	// invalid.beSigned(bob);
-	// invalid2.beSigned(bob);
+	std::cout << "SHRUBBERY EXECUTE BEFORE SIGNING TEST" << std::endl;
+	shrubbery.execute(bob);
+	shrubbery.execute(roy);
+	shrubbery.execute(george);
 
-	// std::cout << "TOPSECRET SIGNING TEST" << std::endl;
-	// topsecret.beSigned(bob);
-	// topsecret.beSigned(roy);
-	// topsecret.beSigned(george);
+	std::cout << std::endl << "SIGNING ALL TESTS BY BOB" << std::endl;
+	shrubbery.beSigned(bob);
+	robotomy.beSigned(bob);
+	pardon.beSigned(bob);
 
-	// std::cout << "AVERAGE SIGNING TEST" << std::endl;
-	// average.beSigned(bob);
-	// average.beSigned(roy);
-	// average.beSigned(george);
+	std::cout << std::endl << "SHRUBBERY EXECUTE TEST" << std::endl;
+	shrubbery.execute(bob);
+	shrubbery.execute(roy);
+	shrubbery.execute(george);
 
-	// std::cout << "AVERAGE SIGNING TEST AFTER GEORGE POWERED UP" << std::endl;
-	// george++;
-	// average.beSigned(george);
+	std::cout << std::endl << "SHRUBBERY EXECUTEFORM TEST" << std::endl;
+	bob.executeForm(shrubbery);
+	roy.executeForm(shrubbery);
+	george.executeForm(shrubbery);
+
+	std::cout << std::endl << "ROBOTOMY EXECUTE TEST" << std::endl;
+	robotomy.execute(bob);
+	robotomy.execute(roy);
+	robotomy.execute(george);
+
+	std::cout << std::endl << "ROBOTOMY EXECUTEFORM TEST" << std::endl;
+	bob.executeForm(robotomy);
+	roy.executeForm(robotomy);
+	george.executeForm(robotomy);
+
+	std::cout << std::endl << "PARDON EXECUTE TEST" << std::endl;
+	pardon.execute(bob);
+	pardon.execute(roy);
+	pardon.execute(george);
+
+	std::cout << std::endl << "PARDON EXECUTEFORM TEST" << std::endl;
+	bob.executeForm(pardon);
+	roy.executeForm(pardon);
+	george.executeForm(pardon);
+
 	return (0);
 }

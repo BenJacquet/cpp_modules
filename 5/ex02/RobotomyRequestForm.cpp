@@ -6,13 +6,13 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 18:48:14 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:18:26 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("presidentialpardon", 72, 45), _target("none")
+RobotomyRequestForm::RobotomyRequestForm() : Form("robotomy request", 72, 45), _target("none")
 {
 	std::cout << "Default constructor for RobotomyRequestForm called" << std::endl;
 }
@@ -22,7 +22,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & src) : Form(src),
 	std::cout << "Copy constructor for RobotomyRequestForm called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("presidentialpardon", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("robotomy request", 72, 45), _target(target)
 {
 	std::cout << "Parametric constructor for RobotomyRequestForm called" << std::endl;
 }
@@ -53,7 +53,7 @@ void RobotomyRequestForm::robotomize()
 		std::cout << this->_target << "'s robotomy failed..." << std::endl;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor)
+void RobotomyRequestForm::executeForm()
 {
-	executor.getName();
+	this->robotomize();
 }

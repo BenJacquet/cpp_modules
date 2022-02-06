@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:07 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 18:48:09 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 18:45:43 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	RobotomyRequestForm(std::string target);
 	~RobotomyRequestForm();
 	RobotomyRequestForm & operator=(RobotomyRequestForm & src);
-	void execute(Bureaucrat const & executor);
+	void executeForm();
 	void robotomize();
 	std::string getTarget() const;
 };
