@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:04:33 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 12:55:07 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:31:39 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 
 DiamondTrap::DiamondTrap(DiamondTrap & src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
 {
-	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	std::cout << "Copy constructor for DiamondTrap called" << std::endl;
 	this->_name = src.getName();
 	this->_hitPoints = src.getHitPoints();
 	this->_energy = src.getEnergy();

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:17:49 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 17:07:53 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:31:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(FragTrap & src) : ClapTrap(src)
 {
-	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	std::cout << "Copy constructor for FragTrap called" << std::endl;
 	this->_name = src.getName();
 	this->_hitPoints = src.getHitPoints();
 	this->_energy = src.getEnergy();

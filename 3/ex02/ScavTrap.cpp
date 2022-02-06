@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:24:02 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 16:13:59 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:31:28 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(ScavTrap & src) : ClapTrap(src)
 {
-	std::cout << "Copy constructor for ClapTrap called" << std::endl;
+	std::cout << "Copy constructor for ScavTrap called" << std::endl;
 	this->_name = src.getName();
 	this->_hitPoints = src.getHitPoints();
 	this->_energy = src.getEnergy();
