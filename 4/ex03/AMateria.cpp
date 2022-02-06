@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 10:25:49 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/05 19:01:37 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,7 @@ void AMateria::setType(std::string const & type)
 	this->_type = type;
 }
 
-AMateria* AMateria::clone() const
-{
-	
-}
-
 void AMateria::use(ICharacter& target)
 {
-	
+	std::cout << "* tries to cast a spell on " << target.getName() << " but the materia is empty *" << std::endl;
 }

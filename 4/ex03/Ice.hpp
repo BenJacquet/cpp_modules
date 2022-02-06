@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:22:50 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 09:42:14 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:41:36 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 
 class Ice : public AMateria
 {
-protected:
-	std::string _type;
-
 public:
 	Ice();
 	Ice(Ice & src);
@@ -29,6 +26,6 @@ public:
 	Ice & operator=(Ice & materia);
 	std::string getType() const;
 	void setType(std::string const & type);
-	virtual Ice* clone() const;
-	virtual void use(ICharacter& target);
+	Ice* clone() const;
+	void use(ICharacter& target);
 };

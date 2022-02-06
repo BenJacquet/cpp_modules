@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:25 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 10:25:53 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:56:45 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,45 @@ Character::Character()
 {
 	std::cout << "Default constructor for Character class called." << std::endl;
 	this->_name = "default";
-	this->_inventory[0] = NULL;
-	this->_inventory[1] = NULL;
-	this->_inventory[2] = NULL;
-	this->_inventory[3] = NULL;
+	for (int i = 0 ; i < 4 ; i++)
+		this->_inventory[i] = NULL;
 }
 
 Character::Character(Character & src)
 {
 	std::cout << "Copy constructor for Character class called." << std::endl;
 	this->_name = src.getName();
-	this->_inventory[0] = src._inventory[0];
-	this->_inventory[1] = src._inventory[1];
-	this->_inventory[2] = src._inventory[2];
-	this->_inventory[3] = src._inventory[3];
+	for (int i = 0 ; i < 4 ; i++)
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+	for (int i = 0 ; i < 4 ; i++)
+		if (src._inventory[i] != NULL)
+			this->_inventory[i] = src._inventory[i]->clone();
 }
 
 Character::Character(std::string const & name) : _name(name)
 {
 	std::cout << "Parametric constructor for Character class called." << std::endl;
-	this->_inventory[0] = NULL;
-	this->_inventory[1] = NULL;
-	this->_inventory[2] = NULL;
-	this->_inventory[3] = NULL;
+	for (int i = 0 ; i < 4 ; i++)
+		this->_inventory[i] = NULL;
 }
 
 Character::~Character()
 {
 	std::cout << "Destructor for Character class called." << std::endl;
+	for (int i = 0 ; i < 4 ; i++)
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 }
 
 Character & Character::operator=(Character & character)
 {
-	this->_name = character.getName();
+	if (this != &character)
+	{
+		this->_name = character.getName();
+		for (int i = 0 ; i < 4 ; i++)
+			this->_inventory[i] = character._inventory[i];
+	}
 	return (*this);
 }
 
@@ -61,30 +67,24 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0 ; i < 4 ; i++)
 	{
-		if (this->getInventory(i) == "empty")
+		if (this->_inventory[i] == m)
+			return;
+		else if (this->_inventory[i] == NULL)
 		{
-			this->setInventory(m, i);
+			this->_inventory[i] = m;
 			break;
 		}
 	}
 }
 
-std::string const & Character::getInventory(int i) const
-{
-	return(this->_inventory[i].getType());
-}
-
-void Character::setInventory(AMateria * m, int i)
-{
-	this->_inventory[i] = m;
-}
-
 void Character::unequip(int idx)
 {
-	this->_inventory[idx].setType("empty");
+	if (idx >= 0 && idx < 4)
+		this->_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, Character & target)
 {
-	this->_inventory[idx].use(target);
+	if (idx >= 0 && idx < 4)
+		this->_inventory[idx]->use(target);
 }

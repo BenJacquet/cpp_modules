@@ -7,6 +7,7 @@ SRCS = main.cpp\
 		Cure.cpp
 
 INCS = AMateria.hpp \
+		ICharacter.hpp\
 		Character.hpp\
 		Ice.hpp\
 		Cure.hpp

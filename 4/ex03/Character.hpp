@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/04 10:24:32 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:20:16 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
+class AMateria;
+
 class Character : public ICharacter
 {
 private:
@@ -26,12 +28,10 @@ public:
 	Character();
 	Character(Character & src);
 	Character(std::string const & name);
-	~Character() {}
+	~Character();
 	Character & operator=(Character & character);
 	std::string const & getName() const;
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, Character & target);
-	std::string const & getInventory(int i) const;
-	void setInventory(AMateria * m, int i);
 };
