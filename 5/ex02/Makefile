@@ -32,6 +32,7 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
+	rm -rf shrubbery
 
 re : fclean all
 
