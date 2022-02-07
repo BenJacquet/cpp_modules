@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:03:29 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 16:07:52 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/07 15:19:17 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/07 18:36:01 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie*	zombieHorde( int N, std::string name )
-{
-	Zombie	*horde = new Zombie[N];
-
-	for (int i = 0 ; i < N ; i++)
-		horde[i].set_name(name);
-	return (horde);
-}
+#include <string>
+#include <iostream>
+#include <cstdlib>
+#include <cctype>
