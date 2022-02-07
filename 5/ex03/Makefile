@@ -1,9 +1,19 @@
-NAME = Karen
+NAME = internship
 
-SRCS = main.cpp \
-		Karen.cpp
+SRCS = main.cpp\
+		Bureaucrat.cpp \
+		Form.cpp \
+		ShrubberyCreationForm.cpp\
+		RobotomyRequestForm.cpp\
+		PresidentialPardonForm.cpp\
+		Intern.cpp
 
-INCS = Karen.hpp
+INCS = Bureaucrat.hpp\
+		Form.hpp\
+		ShrubberyCreationForm.hpp\
+		RobotomyRequestForm.hpp\
+		PresidentialPardonForm.hpp\
+		Intern.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 14:15:07 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 11:33:52 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/07 11:40:24 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/07 12:59:37 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
-#include <exception>
-#include <cstdlib>
-#include "Bureaucrat.hpp"
+#include <iostream>
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-class RobotomyRequestForm : public Form
+class Form;
+
+class Intern
 {
-private:
-	std::string _target;
-public:
-	RobotomyRequestForm();
-	RobotomyRequestForm(RobotomyRequestForm & src);
-	RobotomyRequestForm(std::string target);
-	~RobotomyRequestForm();
-	RobotomyRequestForm & operator=(RobotomyRequestForm & src);
-	void executeForm() const;
-	void robotomize() const;
-	std::string getTarget() const;
+	public:
+		Intern();
+		Intern(Intern & intern);
+		~Intern();
+		Intern & operator=(Intern & intern);
+		Form * makeForm(std::string name, std::string target);
 };
