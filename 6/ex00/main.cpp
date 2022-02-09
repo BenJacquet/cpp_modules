@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:19:19 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 19:00:52 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/08 15:35:09 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	displayChar(std::string str)
 	int		code = atoi(str.c_str());
 	size_t	pos = 0;
 
+	std::cout << "char: ";
 	if (isalpha(str[0]) != 0 || code < 0 || code > 127)
 	{
 		std::cout << "impossible" << std::endl;
@@ -45,6 +46,7 @@ void	displayInt(std::string str)
 	int		code = atoi(str.c_str());
 	size_t	pos = 0;
 
+	std::cout << "int: ";
 	if (isalpha(str[0]) != 0 || code < 0 || code > 127)
 	{
 		std::cout << "impossible" << std::endl;
@@ -68,15 +70,17 @@ void	displayInt(std::string str)
 	}
 }
 
-// void	displayFloat(std::string str)
-// {
+void	displayFloat(std::string str)
+{
+	std::cout << "float: ";
+	std::cout << static_cast<float>(strtof(str.c_str(), NULL)) << "f" << std::endl;
+}
 
-// }
-
-// void	displayDouble(std::string str)
-// {
-
-// }
+void	displayDouble(std::string str)
+{
+	std::cout << "double: ";
+	std::cout << static_cast<double>(strtod(str.c_str(), NULL)) << std::endl;
+}
 
 
 int		main(int ac, char **av)
@@ -87,8 +91,8 @@ int		main(int ac, char **av)
 		return (1);
 	}
 	displayChar(av[1]);
-	displayInt(av[1]);
-	// displayFloat(av[1]);
-	// displayDouble(av[1]);
+	// displayInt(av[1]);
+	displayFloat(av[1]);
+	displayDouble(av[1]);
 	return (0);
 }
