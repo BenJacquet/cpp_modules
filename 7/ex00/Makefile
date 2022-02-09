@@ -1,9 +1,9 @@
-NAME = conversion
+NAME = templates
 
 SRCS = main.cpp\
-		Converter.cpp
+		templates.cpp
 
-INCS = Converter.hpp
+INCS = templates.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -13,12 +13,12 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all : $(NAME)
 
-main.o : $(INCS)
+$(OBJS) : $(INCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-clean : 
+clean :
 	rm -rf $(OBJS)
 
 fclean : clean

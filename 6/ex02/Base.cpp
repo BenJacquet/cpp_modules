@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 12:40:06 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/09 15:28:39 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/09 15:29:06 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Base.hpp"
 
-#include <iostream>
-
-class Fixed
+Base::~Base()
 {
-private:
-	int					_value;
-	static const int	_frac_bits = 8;
-
-public:
-	Fixed();
-	Fixed(const Fixed & fixed);
-	~Fixed();
-	Fixed &	operator=(const Fixed & fixed);
-	int		getValue() const;
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-};
+	std::cout << "Destructor for Base called" << std::endl;
+}

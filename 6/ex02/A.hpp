@@ -1,31 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 12:40:06 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/09 15:29:29 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/09 15:30:26 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-
-class Fixed
-{
-private:
-	int					_value;
-	static const int	_frac_bits = 8;
-
-public:
-	Fixed();
-	Fixed(const Fixed & fixed);
-	~Fixed();
-	Fixed &	operator=(const Fixed & fixed);
-	int		getValue() const;
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-};
+class A : public Base {};

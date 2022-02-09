@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 15:19:17 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 18:36:01 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/09 14:49:12 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/09 15:20:31 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
-#include <cstdlib>
-#include <cctype>
+#include <stdint.h>
+
+struct Data
+{
+	void	*	address;
+	char		char_member;
+	int			int_member;
+};

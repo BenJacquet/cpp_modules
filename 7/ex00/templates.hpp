@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   templates.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 12:40:06 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/09 16:57:22 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/09 17:43:45 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 #include <iostream>
 
-class Fixed
+template<typename T> T const &	max(T const & x, T const & y)
 {
-private:
-	int					_value;
-	static const int	_frac_bits = 8;
+	return (x >= y ? x : y);
+}
 
-public:
-	Fixed();
-	Fixed(const Fixed & fixed);
-	~Fixed();
-	Fixed &	operator=(const Fixed & fixed);
-	int		getValue() const;
-	int		getRawBits() const;
-	void	setRawBits(int const raw);
-};
+template<typename T> T const &	min(T const & x, T const & y)
+{
+	return (x <= y ? x : y);
+}
+
+template<typename T> void	swap(T & x, T & y)
+{
+	T	tmp;
+
+	tmp = x;
+	x = y;
+	y = tmp;
+}

@@ -1,9 +1,12 @@
-NAME = conversion
+NAME = indentify
 
 SRCS = main.cpp\
-		Converter.cpp
+		Base.cpp
 
-INCS = Converter.hpp
+INCS = Base.hpp\
+		A.hpp\
+		B.hpp\
+		C.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -13,12 +16,12 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all : $(NAME)
 
-main.o : $(INCS)
+$(OBJS) : $(INCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-clean : 
+clean :
 	rm -rf $(OBJS)
 
 fclean : clean

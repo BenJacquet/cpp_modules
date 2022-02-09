@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:27:50 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/26 14:28:09 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/09 13:00:17 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed & fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = fixed.getValue();
+	this->_value = fixed.getRawBits();
 	return;
 }
 
@@ -156,6 +156,7 @@ int		Fixed::getValue(void) const
 
 int		Fixed::getRawBits() const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 

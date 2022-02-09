@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:00 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 11:33:54 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:14:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ std::string RobotomyRequestForm::getTarget() const
 
 void RobotomyRequestForm::robotomize() const
 {
-	srand(time(NULL));
+	timeval			t;
+	unsigned int	seed;
+
+	gettimeofday(&t, NULL);
+	seed = t.tv_usec;
+	srand(time(NULL) + seed);
 	std::cout << "Dziiiiit Dziiiiit Dziiiiiit!" << std::endl;
 	if ((rand() % 2) + 1 == 2)
 		std::cout << this->_target << "'s robotomy is a success!" << std::endl;

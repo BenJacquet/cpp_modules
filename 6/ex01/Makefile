@@ -1,9 +1,8 @@
-NAME = conversion
+NAME = serialize
 
-SRCS = main.cpp\
-		Converter.cpp
+SRCS = main.cpp
 
-INCS = Converter.hpp
+INCS = Data.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -13,12 +12,12 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all : $(NAME)
 
-main.o : $(INCS)
+$(OBJS) : $(INCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-clean : 
+clean :
 	rm -rf $(OBJS)
 
 fclean : clean
