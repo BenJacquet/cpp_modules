@@ -1,14 +1,14 @@
-NAME = templates
+NAME = iter
 
-SRCS = main.cpp\
+SRCS = main.cpp
 
-INCS = templates.hpp\
+INCS = iter.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 all : $(NAME)
 
