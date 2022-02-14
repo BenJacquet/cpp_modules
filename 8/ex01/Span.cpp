@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:33:15 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/14 17:03:43 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:49:04 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,7 @@ Span & Span::operator=(const Span & src)
 	this->_span = src.copySpan();
 	return (*this);
 }
+
+const char* Span::AlreadyFull::what() const throw() {return ("Span is already full.");}
+
+const char* Span::NotSpan::what() const throw() {return ("Not enough values to be considered a span.");}
