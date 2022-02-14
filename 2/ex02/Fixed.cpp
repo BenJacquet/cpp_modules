@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:27:50 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 21:12:27 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:56:48 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ int		Fixed::toInt( void ) const
 	return (this->_value >> this->_bits);
 }
 
-Fixed & Fixed::min(Fixed & a, Fixed & b) const
+Fixed & Fixed::min(Fixed & a, Fixed & b)
 {
 	if (a <= b)
 		return (a);
@@ -189,7 +189,7 @@ const Fixed & Fixed::min(const Fixed & a, const Fixed & b)
 	return (b);
 }
 
-Fixed & Fixed::max(Fixed & a, Fixed & b) const
+Fixed & Fixed::max(Fixed & a, Fixed & b)
 {
 	if (a >= b)
 		return (a);

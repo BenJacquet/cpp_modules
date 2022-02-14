@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 10:28:13 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 21:12:24 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:56:55 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ public:
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
-	Fixed & min(Fixed & a, Fixed & b) const;
+	static Fixed & min(Fixed & a, Fixed & b);
 	static const Fixed & min(const Fixed & a, const Fixed & b);
-	Fixed & max(Fixed & a, Fixed & b) const;
+	static Fixed & max(Fixed & a, Fixed & b);
 	static const Fixed & max(const Fixed & a, const Fixed & b);
 };
 
