@@ -1,10 +1,10 @@
-NAME = easy
+NAME = span
 
 SRCS = main.cpp\
-		NotFound.cpp
+		Span.cpp\
+		
 
-INCS = easyfind.hpp\
-		NotFound.hpp
+INCS = 
 
 OBJS = $(SRCS:.cpp=.o)
 
