@@ -4,13 +4,16 @@ SRCS = main.cpp\
 		AMateria.cpp\
 		Character.cpp\
 		Ice.cpp\
-		Cure.cpp
+		Cure.cpp\
+		MateriaSource.cpp
 
 INCS = AMateria.hpp \
 		ICharacter.hpp\
 		Character.hpp\
 		Ice.hpp\
-		Cure.hpp
+		Cure.hpp\
+		MateriaSource.hpp\
+		IMateriaSource.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

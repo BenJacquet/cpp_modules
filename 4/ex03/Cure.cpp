@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:21:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/06 16:41:39 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/15 20:02:09 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 Cure::Cure() : AMateria()
 {
 	this->_type = "cure";
-	std::cout << "Default constructor for Cure class called." << std::endl;
+	// std::cout << "Default constructor for Cure class called." << std::endl;
 }
 
 Cure::Cure(Cure & src) : AMateria(src)
 {
-	std::cout << "Copy constructor for Cure class called." << std::endl;
+	// std::cout << "Copy constructor for Cure class called." << std::endl;
 	this->_type = src.getType();
 }
 
 Cure::Cure(std::string const & type) : AMateria(type)
 {
-	std::cout << "Parametric constructor for Cure class called." << std::endl;
+	// std::cout << "Parametric constructor for Cure class called." << std::endl;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Destructor for Cure class called." << std::endl;
+	// std::cout << "Destructor for Cure class called." << std::endl;
 }
 
 Cure & Cure::operator=(Cure & materia)

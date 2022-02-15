@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:57 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/06 16:41:23 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/15 20:02:21 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 Ice::Ice() : AMateria()
 {
 	this->_type = "ice";
-	std::cout << "Default constructor for Ice class called." << std::endl;
+	// std::cout << "Default constructor for Ice class called." << std::endl;
 }
 
 Ice::Ice(Ice & src) : AMateria(src)
 {
-	std::cout << "Copy constructor for Ice class called." << std::endl;
+	// std::cout << "Copy constructor for Ice class called." << std::endl;
 	this->_type = src.getType();
 }
 
 Ice::Ice(std::string const & type) : AMateria(type)
 {
-	std::cout << "Parametric constructor for Ice class called." << std::endl;
+	// std::cout << "Parametric constructor for Ice class called." << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Destructor for Ice class called." << std::endl;
+	// std::cout << "Destructor for Ice class called." << std::endl;
 }
 
 Ice & Ice::operator=(Ice & materia)

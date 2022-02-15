@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:59 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/06 17:06:20 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/15 20:52:31 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,18 @@ class AMateria
 {
 protected:
 	std::string _type;
-
+	bool		_equipped;
 public:
 	AMateria();
 	AMateria(AMateria & src);
 	AMateria(std::string const & type);
-	virtual ~AMateria() = 0;
+	virtual ~AMateria();
 	AMateria & operator=(AMateria & materia);
+
 	std::string getType() const;
+	bool getEquipped() const;
 	void setType(std::string const & type);
-	virtual void use(ICharacter& target);
-	virtual AMateria * clone() const;
+	void setEquipped(bool equipped);
+	virtual void use(ICharacter & target);
+	virtual AMateria * clone() const = 0;
 };
