@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NotSpan.hpp                                        :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:31:20 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/14 15:32:14 by jabenjam         ###   ########.fr       */
+/*   Created: 2022/02/15 14:44:45 by jabenjam          #+#    #+#             */
+/*   Updated: 2022/02/15 16:27:35 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <exception>
+#include <iostream>
+#include <stack>
 
-class NotSpan : public std::exception
+// template <typename T>
+class MutantStack// : public std::stack<T>
 {
+	private:
+		
 	public:
-		virtual const char* what() const throw();
+		//CANONICAL FORM COMPONENTS
+		MutantStack(/*args*/);
+		MutantStack(const MutantStack & src);
+		~MutantStack();
+		MutantStack & operator=(const MutantStack & src);
+		//OTHER COMPONENTS
 };

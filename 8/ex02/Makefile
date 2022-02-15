@@ -1,8 +1,9 @@
-NAME = array
+NAME = mutant
 
-SRCS = main.cpp
+SRCS = main.cpp\
+		MutantStack.cpp
 
-INCS = Array.hpp
+INCS = MutantStack.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
