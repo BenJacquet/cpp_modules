@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:21:04 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/10 16:09:40 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 14:22:41 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,13 @@ class Array
 				this->_content[i] = rhs.getContent(i);
 			return (*this);
 		}
-		T				operator[](unsigned int i)
+		T			&	operator[](unsigned int i)
 		{
 			if (i < this->size())
-				return (this->getContent(i));
+				return (this->_content[i]);
 			else
 				throw Array::OutOfBounds();
-			return (0);
-		}
-		const T			operator[](unsigned int i) const
-		{
-			if (i < this->size())
-				return (this->getContent(i));
-			else
-				throw Array::OutOfBounds();
-			return (0);
+			return (this->_content[i]);
 		}
 		// EXCEPTIONS
 		class OutOfBounds : public std::exception
