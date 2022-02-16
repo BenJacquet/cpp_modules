@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:44:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/15 16:27:35 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:24:00 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <iostream>
 #include <stack>
 
-// template <typename T>
-class MutantStack// : public std::stack<T>
+template <typename T>
+class MutantStack<T> : public std::stack<T>
 {
 	private:
 		
@@ -27,4 +27,11 @@ class MutantStack// : public std::stack<T>
 		~MutantStack();
 		MutantStack & operator=(const MutantStack & src);
 		//OTHER COMPONENTS
+		// class iterator : public std::iterator
+		// {
+		// 	private:
+				
+		// 	public:
+				
+		// };
 };

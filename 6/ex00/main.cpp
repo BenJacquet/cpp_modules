@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:19:19 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/09 14:48:48 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:27:44 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,11 @@ int		main(int ac, char **av)
 		std::cerr << "Error: Must input one argument" << std::endl;
 		return (1);
 	}
-	detect_type(av[1]);
+	float data = atof(av[1]);
+	Converter converter(data);
+
+	std::cout << converter << std::endl;
+
 	// displayChar(av[1]);
 	// displayInt(av[1]);
 	// displayFloat(av[1]);
