@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:16 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:18 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 14:48:19 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ Dog::Dog(Dog & src)
 {
 	std::cout << "Copy Dog constructor called." << std::endl;
 	this->_type = src.getType();
+	this->_brain = new Brain;
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(src.getBrain().getIdea(i), i);
 }
 
 Dog::Dog(std::string const type) : _type(type)
