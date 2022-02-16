@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:38 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/16 14:48:24 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 21:13:06 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Cat::~Cat()
 Cat & Cat::operator=(Cat & cat)
 {
 	this->_type = cat.getType();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(cat.getBrain().getIdea(i), i);
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:16 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/16 14:48:19 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 21:12:07 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Dog::~Dog()
 Dog & Dog::operator=(Dog & dog)
 {
 	this->_type = dog.getType();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(dog.getBrain().getIdea(i), i);
 	return (*this);
 }
 
