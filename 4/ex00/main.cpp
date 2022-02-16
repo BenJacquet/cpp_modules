@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:04:06 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/01/28 16:16:07 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:59:06 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int		main(int ac, char **av)
+int		main()
 {
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();

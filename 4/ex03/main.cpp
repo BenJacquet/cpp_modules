@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:03:55 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/15 22:30:40 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/16 12:02:13 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int main()
 		std::cout << std::endl << tifa << std::endl;
 	}
 	{
+		std::cout << "TESTS SUJET" << std::endl;
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
