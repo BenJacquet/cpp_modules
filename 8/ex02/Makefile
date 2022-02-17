@@ -1,7 +1,6 @@
 NAME = mutant
 
 SRCS = main.cpp\
-		MutantStack.cpp
 
 INCS = MutantStack.hpp
 

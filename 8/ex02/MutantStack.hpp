@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:44:45 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/16 15:24:00 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:18:19 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,17 @@
 #include <stack>
 
 template <typename T>
-class MutantStack<T> : public std::stack<T>
+class MutantStack : public std::stack<T>
 {
 	private:
 		
 	public:
 		//CANONICAL FORM COMPONENTS
-		MutantStack(/*args*/);
-		MutantStack(const MutantStack & src);
-		~MutantStack();
-		MutantStack & operator=(const MutantStack & src);
+		MutantStack() : std::stack<T>() {};
+		MutantStack(const MutantStack & src) : std::stack<T>(reinterpret_cast<std::stack<T> >(src)){};
+		~MutantStack() {};
+		MutantStack & operator=(const MutantStack<T> & src);
 		//OTHER COMPONENTS
-		// class iterator : public std::iterator
-		// {
-		// 	private:
-				
-		// 	public:
-				
-		// };
+		typename std::stack<T>::container_type::iterator begin() {return (this->c.begin());}
+		typename std::stack<T>::container_type::iterator end() {return (this->c.end());}
 };
