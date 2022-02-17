@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:15:07 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/07 11:33:52 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:52:42 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <string>
 #include <exception>
 #include <cstdlib>
+#include <ctime>
+#include <sys/time.h>
+#include <unistd.h>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
