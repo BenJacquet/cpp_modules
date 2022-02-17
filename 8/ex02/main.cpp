@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:43:25 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/17 14:24:25 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:29:58 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ int main()
 	std::cout << "Stack (end - 1)= " << "(" << &end - 1 << ") - " << *(end - 1) << std::endl;
 
 	std::cout << std::endl << "Stack content:" << std::endl;
-	for (int i = 0; beg != end; beg++, i++)
-	{
-		std::cout << "[" << i << "] - " << *beg << std::endl;
-	}
 	for (int i = 0; beg != end; beg++, i++)
 	{
 		std::cout << "[" << i << "] - " << *beg << std::endl;
