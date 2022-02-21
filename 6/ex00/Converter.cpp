@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:58 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/21 11:03:36 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/21 17:40:33 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 Converter::Converter( std::string data )
 {
 	std::size_t dot = data.find_first_of('.', 0);
-	this->_d = atof(data.c_str());
+	if (data.length() == 1)
+		this->_d = static_cast<double>(data[0]);
+	else
+		this->_d = atof(data.c_str());
 	if (data.compare("inf") == 0 || data.compare("-inf") == 0 || data.compare("+inf") == 0)
 		this->_inf = true;
 	else
