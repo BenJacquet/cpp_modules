@@ -6,19 +6,17 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:58 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/16 23:17:06 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/21 11:03:36 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
 
-// && (data.find(".\0", dot) == std::string::npos) || (data.find(".f\0", dot) == std::string::npos))
-
-Converter::Converter( std::string data)
+Converter::Converter( std::string data )
 {
 	std::size_t dot = data.find_first_of('.', 0);
 	this->_d = atof(data.c_str());
-	if (data.compare("inf") == 0 || data.compare("-inf") == 0)
+	if (data.compare("inf") == 0 || data.compare("-inf") == 0 || data.compare("+inf") == 0)
 		this->_inf = true;
 	else
 		this->_inf = false;
@@ -26,7 +24,9 @@ Converter::Converter( std::string data)
 		this->_sign = true;
 	else
 		this->_sign = false;
-	if ((dot != std::string::npos && (data.find_first_not_of("123456789", dot) != std::string::npos)) || this->_d != this->_d)
+	if ((data.find(".\0") != std::string::npos || data.find(".f\0") != std::string::npos) && (data.find_first_of("123456789", dot) == std::string::npos))
+		this->_full = true;
+	else if ((dot != std::string::npos && (data.find_first_not_of("123456789", dot) != std::string::npos)) || this->_d != this->_d)
 		this->_full = false;
 	else
 		this->_full = true;
@@ -85,7 +85,7 @@ void Converter::printFloat()
 		this->_f = static_cast<float>(this->_d);
 		std::cout << this->_f << (this->_full == true ? ".0" : "") << 'f' <<std::endl;
 	}
-	else
+	else 
 		std::cout << (this->_sign ==  true ? "-" : "") << "inff" << std::endl;
 }
 
