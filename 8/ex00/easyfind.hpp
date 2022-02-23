@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:13:55 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/15 11:08:32 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/23 11:48:59 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,18 @@
 #include <iostream>
 #include <vector>
 #include <iterator>
+#include <algorithm>
 #include "NotFound.hpp"
 
 template <typename T> void easyfind(std::vector<T> & vect, const int to_find)
 {
-	typename std::vector<T>::const_iterator	it = vect.begin();
-	typename std::vector<T>::const_iterator	end = vect.end();
+	typename std::vector<T>::iterator	end = vect.end();
+	typename std::vector<T>::iterator	found = std::find(vect.begin(), end, to_find);
 
-	for (int i = 0; it != end; it++, i++)
+	if (found != end)
 	{
-		if (*it == to_find)
-		{
-			std::cout << "[" << i << "] " << *it << std::endl;
-			return;
-		}
+		std::cout << *found << std::endl;
+		return;
 	}
 	throw (NotFound());
 	return;

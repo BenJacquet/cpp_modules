@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:33:15 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/15 15:32:45 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:23:52 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void Span::addNumbers(std::vector<int>::const_iterator beg, std::vector<int>::co
 {
 	try
 	{
-		// std::cout << "beg iterator is located at index " << (beg - this->_span.begin()) << std::endl;
-		// std::cout << "end iterator is located at index " << (end - this->_span.begin()) << std::endl;
 		if ((beg - this->_span.begin()) >= 0 && static_cast<unsigned long>(end - this->_span.begin()) <= this->_max)
 		{
 			srand(time(NULL));
@@ -123,21 +121,12 @@ int Span::longestSpan()
 	{
 		if (this->_span.size() > 1)
 		{
-			int longest = 0;
-			std::vector<int>::const_iterator beg = this->_span.begin();
-			std::vector<int>::const_iterator it = beg;
-			std::vector<int>::const_iterator end = this->_span.end();
-
-			for (; beg != end; beg++)
-			{
-				it = beg + 1;
-				for (; it != end; it++)
-				{
-					if (abs(*beg - *it) > longest)
-						longest = abs(*beg - *it);
-				}
-			}
-			return (longest);
+			std::vector<int> tmp(this->_span.size());
+			std::vector<int>::iterator beg = tmp.begin();
+			copy(this->_span.begin(), this->_span.end(), beg);
+			std::vector<int>::iterator end = tmp.end();
+			std::sort(beg, end);
+			return (*(end - 1) - *beg);
 		}
 		else
 			throw Span::NotSpan();

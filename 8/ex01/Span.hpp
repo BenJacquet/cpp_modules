@@ -6,7 +6,7 @@
 /*   By: jabenjam <jabenjam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:33:04 by jabenjam          #+#    #+#             */
-/*   Updated: 2022/02/15 14:13:56 by jabenjam         ###   ########.fr       */
+/*   Updated: 2022/02/23 11:46:50 by jabenjam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <exception>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 class Span
 {
